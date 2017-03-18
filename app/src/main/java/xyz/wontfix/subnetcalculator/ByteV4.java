@@ -23,13 +23,13 @@ public class ByteV4 {
     private void setBinaryFromDecimal() {
         int buffer = decimalValue;
         int power = 7;
-        while (buffer != 0 && power >= 0) {
-            if (buffer > pow(2,power)) {
+        while (buffer > 0 && power >= 0) {
+            if (buffer >= pow(2,power)) {
                 buffer =- (int)pow(2,power);
                 binaryValue[power] = true;
             }
             else {
-                binaryValue[power] = true;
+                binaryValue[power] = false;
             }
             --power;
         }
