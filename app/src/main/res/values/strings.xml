@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SubnetCalculator</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="main_title">Subnet Calculator</string>
 </resources>

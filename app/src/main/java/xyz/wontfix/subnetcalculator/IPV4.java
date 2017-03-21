@@ -5,4 +5,11 @@ package xyz.wontfix.subnetcalculator;
  */
 
 public class IPV4 {
+    public AddressV4 address;
+    public NetmaskV4 netmask;
+
+    public IPV4 () {
+        address = new AddressV4();
+        netmask = new NetmaskV4();
+    }
 }

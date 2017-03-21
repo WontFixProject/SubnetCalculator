@@ -7,9 +7,17 @@ import static java.lang.Math.pow;
  *******************************************************************/
 
 public class ByteV4 {
-    private int decimalValue;
-    private String hexadecimalValue;
-    private boolean[] binaryValue;
+    public int decimalValue;
+    public String hexadecimalValue;
+    public boolean[] binaryValue;
+
+    //Constructor (no value)
+    public ByteV4 () {
+        decimalValue = 0;
+        this.binaryValue = new boolean[8];
+        setBinaryFromDecimal();
+        setHexadecimalFromBinary();
+    }
 
     //Constructor (from decimal value)
     public ByteV4 (int decimalValue) {
@@ -20,18 +28,22 @@ public class ByteV4 {
     }
 
     //Compute and set binary value from decimal value
-    private void setBinaryFromDecimal() {
+    public void setBinaryFromDecimal() {
         int buffer = decimalValue;
         int power = 7;
+
+        for (int i=0; i<8; ++i) {
+            binaryValue[i] = false;
+        }
         while (buffer > 0 && power >= 0) {
             if (buffer >= pow(2,power)) {
-                buffer =- (int)pow(2,power);
+                buffer -= (int)pow(2,power);
                 binaryValue[power] = true;
             }
             else {
                 binaryValue[power] = false;
             }
-            --power;
+            power = power - 1;
         }
     }
 
