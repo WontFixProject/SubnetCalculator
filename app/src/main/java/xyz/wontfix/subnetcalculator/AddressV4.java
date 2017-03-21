@@ -9,9 +9,9 @@ public class AddressV4 {
 
     public AddressV4 () {
         fields = new ByteV4[4];
-        fields[0] = new ByteV4(100);
-        fields[1] = new ByteV4(100);
-        fields[2] = new ByteV4(100);
-        fields[3] = new ByteV4(100);
+        fields[0] = new ByteV4();
+        fields[1] = new ByteV4();
+        fields[2] = new ByteV4();
+        fields[3] = new ByteV4();
     }
 }

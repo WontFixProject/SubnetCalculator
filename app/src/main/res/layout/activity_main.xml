@@ -34,9 +34,9 @@ tools:context="xyz.wontfix.subnetcalculator.MainActivity">
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
@@ -45,9 +45,9 @@ tools:context="xyz.wontfix.subnetcalculator.MainActivity">
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
@@ -56,9 +56,9 @@ tools:context="xyz.wontfix.subnetcalculator.MainActivity">
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
@@ -67,9 +67,9 @@ tools:context="xyz.wontfix.subnetcalculator.MainActivity">
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
@@ -314,44 +314,280 @@ tools:context="xyz.wontfix.subnetcalculator.MainActivity">
         android:padding="0dp"
         android:layout_below="@+id/addressV4Binary">
         <EditText
-            android:id="@+id/netmaskV4_field1"
+            android:id="@+id/netmaskV4_field3"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/netmaskV4_field2"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
         <EditText
-            android:id="@+id/netmaskV4_field3"
+            android:id="@+id/netmaskV4_field1"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
         <EditText
-            android:id="@+id/netmaskV4_field4"
+            android:id="@+id/netmaskV4_field0"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:inputType="numberDecimal"
             android:layout_weight="0.25"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/netmaskV4Binary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:layout_below="@+id/netmaskV4">
+        <EditText
+            android:id="@+id/netmaskV4_binary_field37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
+        <EditText
+            android:id="@+id/netmaskV4_binary_field00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:layout_weight="0.1"/>
     </LinearLayout>
 </RelativeLayout>

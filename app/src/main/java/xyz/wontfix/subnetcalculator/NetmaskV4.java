@@ -9,5 +9,9 @@ public class NetmaskV4 {
 
     public NetmaskV4 () {
         fields = new ByteV4[4];
+        fields[0] = new ByteV4();
+        fields[1] = new ByteV4();
+        fields[2] = new ByteV4();
+        fields[3] = new ByteV4();
     }
 }
