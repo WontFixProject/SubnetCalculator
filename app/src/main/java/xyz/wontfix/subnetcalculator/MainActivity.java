@@ -8,13 +8,13 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
 
-    private EditText addressV4Field0, addressV4Field1, addressV4Field2, addressV4Field3;
+    private EditText addressV4DecimalField0, addressV4DecimalField1, addressV4DecimalField2, addressV4DecimalField3;
     private EditText addressV4BinaryField00, addressV4BinaryField01,addressV4BinaryField02,addressV4BinaryField03,addressV4BinaryField04,addressV4BinaryField05,addressV4BinaryField06,addressV4BinaryField07;
     private EditText addressV4BinaryField10, addressV4BinaryField11,addressV4BinaryField12,addressV4BinaryField13,addressV4BinaryField14,addressV4BinaryField15,addressV4BinaryField16,addressV4BinaryField17;
     private EditText addressV4BinaryField20, addressV4BinaryField21,addressV4BinaryField22,addressV4BinaryField23,addressV4BinaryField24,addressV4BinaryField25,addressV4BinaryField26,addressV4BinaryField27;
     private EditText addressV4BinaryField30, addressV4BinaryField31,addressV4BinaryField32,addressV4BinaryField33,addressV4BinaryField34,addressV4BinaryField35,addressV4BinaryField36,addressV4BinaryField37;
 
-    private EditText netmaskV4Field0, netmaskV4Field1, netmaskV4Field2, netmaskV4Field3;
+    private EditText netmaskV4DecimalField0, netmaskV4DecimalField1, netmaskV4DecimalField2, netmaskV4DecimalField3;
     private EditText netmaskV4BinaryField00, netmaskV4BinaryField01,netmaskV4BinaryField02,netmaskV4BinaryField03,netmaskV4BinaryField04,netmaskV4BinaryField05,netmaskV4BinaryField06,netmaskV4BinaryField07;
     private EditText netmaskV4BinaryField10, netmaskV4BinaryField11,netmaskV4BinaryField12,netmaskV4BinaryField13,netmaskV4BinaryField14,netmaskV4BinaryField15,netmaskV4BinaryField16,netmaskV4BinaryField17;
     private EditText netmaskV4BinaryField20, netmaskV4BinaryField21,netmaskV4BinaryField22,netmaskV4BinaryField23,netmaskV4BinaryField24,netmaskV4BinaryField25,netmaskV4BinaryField26,netmaskV4BinaryField27;
@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
         ipv4 = new IPV4();
 
-        addressV4Field0 = (EditText) findViewById(R.id.addressV4_field0);
-        addressV4Field1 = (EditText) findViewById(R.id.addressV4_field1);
-        addressV4Field2 = (EditText) findViewById(R.id.addressV4_field2);
-        addressV4Field3 = (EditText) findViewById(R.id.addressV4_field3);
+        addressV4DecimalField0 = (EditText) findViewById(R.id.addressV4_decimal_field0);
+        addressV4DecimalField1 = (EditText) findViewById(R.id.addressV4_decimal_field1);
+        addressV4DecimalField2 = (EditText) findViewById(R.id.addressV4_decimal_field2);
+        addressV4DecimalField3 = (EditText) findViewById(R.id.addressV4_decimal_field3);
 
         addressV4BinaryField00 = (EditText) findViewById(R.id.addressV4_binary_field00);
         addressV4BinaryField01 = (EditText) findViewById(R.id.addressV4_binary_field01);
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         addressV4BinaryField36 = (EditText) findViewById(R.id.addressV4_binary_field36);
         addressV4BinaryField37 = (EditText) findViewById(R.id.addressV4_binary_field37);
 
-        netmaskV4Field0 = (EditText) findViewById(R.id.netmaskV4_field0);
-        netmaskV4Field1 = (EditText) findViewById(R.id.netmaskV4_field1);
-        netmaskV4Field2 = (EditText) findViewById(R.id.netmaskV4_field2);
-        netmaskV4Field3 = (EditText) findViewById(R.id.netmaskV4_field3);
+        netmaskV4DecimalField0 = (EditText) findViewById(R.id.netmaskV4_decimal_field0);
+        netmaskV4DecimalField1 = (EditText) findViewById(R.id.netmaskV4_decimal_field1);
+        netmaskV4DecimalField2 = (EditText) findViewById(R.id.netmaskV4_decimal_field2);
+        netmaskV4DecimalField3 = (EditText) findViewById(R.id.netmaskV4_decimal_field3);
 
         netmaskV4BinaryField00 = (EditText) findViewById(R.id.netmaskV4_binary_field00);
         netmaskV4BinaryField01 = (EditText) findViewById(R.id.netmaskV4_binary_field01);
@@ -113,33 +113,33 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         netmaskV4BinaryField36 = (EditText) findViewById(R.id.netmaskV4_binary_field36);
         netmaskV4BinaryField37 = (EditText) findViewById(R.id.netmaskV4_binary_field37);
 
-        addressV4Field0.setOnFocusChangeListener(this);
-        addressV4Field1.setOnFocusChangeListener(this);
-        addressV4Field2.setOnFocusChangeListener(this);
-        addressV4Field3.setOnFocusChangeListener(this);
+        addressV4DecimalField0.setOnFocusChangeListener(this);
+        addressV4DecimalField1.setOnFocusChangeListener(this);
+        addressV4DecimalField2.setOnFocusChangeListener(this);
+        addressV4DecimalField3.setOnFocusChangeListener(this);
 
-        netmaskV4Field0.setOnFocusChangeListener(this);
-        netmaskV4Field1.setOnFocusChangeListener(this);
-        netmaskV4Field2.setOnFocusChangeListener(this);
-        netmaskV4Field3.setOnFocusChangeListener(this);
+        netmaskV4DecimalField0.setOnFocusChangeListener(this);
+        netmaskV4DecimalField1.setOnFocusChangeListener(this);
+        netmaskV4DecimalField2.setOnFocusChangeListener(this);
+        netmaskV4DecimalField3.setOnFocusChangeListener(this);
 
-        onFocusChange(addressV4Field0, false);
-        onFocusChange(addressV4Field1, false);
-        onFocusChange(addressV4Field2, false);
-        onFocusChange(addressV4Field3, false);
+        onFocusChange(addressV4DecimalField0, false);
+        onFocusChange(addressV4DecimalField1, false);
+        onFocusChange(addressV4DecimalField2, false);
+        onFocusChange(addressV4DecimalField3, false);
 
-        onFocusChange(netmaskV4Field0, false);
-        onFocusChange(netmaskV4Field1, false);
-        onFocusChange(netmaskV4Field2, false);
-        onFocusChange(netmaskV4Field3, false);
+        onFocusChange(netmaskV4DecimalField0, false);
+        onFocusChange(netmaskV4DecimalField1, false);
+        onFocusChange(netmaskV4DecimalField2, false);
+        onFocusChange(netmaskV4DecimalField3, false);
     }
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         if (!hasFocus) {
-            if (v == addressV4Field0) {
+            if (v == addressV4DecimalField0) {
                 try {
-                    ipv4.address.fields[0].decimalValue = Integer.valueOf(addressV4Field0.getText().toString());
+                    ipv4.address.fields[0].decimalValue = Integer.valueOf(addressV4DecimalField0.getText().toString());
                     ipv4.address.fields[0].setBinaryFromDecimal();
                     if (ipv4.address.fields[0].binaryValue[0]) {addressV4BinaryField00.setText("1");} else {addressV4BinaryField00.setText("0");}
                     if (ipv4.address.fields[0].binaryValue[1]) {addressV4BinaryField01.setText("1");} else {addressV4BinaryField01.setText("0");}
@@ -153,9 +153,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == addressV4Field1) {
+            if (v == addressV4DecimalField1) {
                 try {
-                    ipv4.address.fields[1].decimalValue = Integer.valueOf(addressV4Field1.getText().toString());
+                    ipv4.address.fields[1].decimalValue = Integer.valueOf(addressV4DecimalField1.getText().toString());
                     ipv4.address.fields[1].setBinaryFromDecimal();
                     if (ipv4.address.fields[1].binaryValue[0]) {addressV4BinaryField10.setText("1");} else {addressV4BinaryField10.setText("0");}
                     if (ipv4.address.fields[1].binaryValue[1]) {addressV4BinaryField11.setText("1");} else {addressV4BinaryField11.setText("0");}
@@ -169,9 +169,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == addressV4Field2) {
+            if (v == addressV4DecimalField2) {
                 try {
-                    ipv4.address.fields[2].decimalValue = Integer.valueOf(addressV4Field2.getText().toString());
+                    ipv4.address.fields[2].decimalValue = Integer.valueOf(addressV4DecimalField2.getText().toString());
                     ipv4.address.fields[2].setBinaryFromDecimal();
                     if (ipv4.address.fields[2].binaryValue[0]) {addressV4BinaryField20.setText("1");} else {addressV4BinaryField20.setText("0");}
                     if (ipv4.address.fields[2].binaryValue[1]) {addressV4BinaryField21.setText("1");} else {addressV4BinaryField21.setText("0");}
@@ -185,9 +185,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == addressV4Field3) {
+            if (v == addressV4DecimalField3) {
                 try {
-                    ipv4.address.fields[3].decimalValue = Integer.valueOf(addressV4Field3.getText().toString());
+                    ipv4.address.fields[3].decimalValue = Integer.valueOf(addressV4DecimalField3.getText().toString());
                     ipv4.address.fields[3].setBinaryFromDecimal();
                     if (ipv4.address.fields[3].binaryValue[0]) {addressV4BinaryField30.setText("1");} else {addressV4BinaryField30.setText("0");}
                     if (ipv4.address.fields[3].binaryValue[1]) {addressV4BinaryField31.setText("1");} else {addressV4BinaryField31.setText("0");}
@@ -201,9 +201,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == netmaskV4Field0) {
+            if (v == netmaskV4DecimalField0) {
                 try {
-                    ipv4.netmask.fields[0].decimalValue = Integer.valueOf(netmaskV4Field0.getText().toString());
+                    ipv4.netmask.fields[0].decimalValue = Integer.valueOf(netmaskV4DecimalField0.getText().toString());
                     ipv4.netmask.fields[0].setBinaryFromDecimal();
                     if (ipv4.netmask.fields[0].binaryValue[0]) {netmaskV4BinaryField00.setText("1");} else {netmaskV4BinaryField00.setText("0");}
                     if (ipv4.netmask.fields[0].binaryValue[1]) {netmaskV4BinaryField01.setText("1");} else {netmaskV4BinaryField01.setText("0");}
@@ -217,9 +217,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == netmaskV4Field1) {
+            if (v == netmaskV4DecimalField1) {
                 try {
-                    ipv4.netmask.fields[1].decimalValue = Integer.valueOf(netmaskV4Field1.getText().toString());
+                    ipv4.netmask.fields[1].decimalValue = Integer.valueOf(netmaskV4DecimalField1.getText().toString());
                     ipv4.netmask.fields[1].setBinaryFromDecimal();
                     if (ipv4.netmask.fields[1].binaryValue[0]) {netmaskV4BinaryField10.setText("1");} else {netmaskV4BinaryField10.setText("0");}
                     if (ipv4.netmask.fields[1].binaryValue[1]) {netmaskV4BinaryField11.setText("1");} else {netmaskV4BinaryField11.setText("0");}
@@ -233,9 +233,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == netmaskV4Field2) {
+            if (v == netmaskV4DecimalField2) {
                 try {
-                    ipv4.netmask.fields[2].decimalValue = Integer.valueOf(netmaskV4Field2.getText().toString());
+                    ipv4.netmask.fields[2].decimalValue = Integer.valueOf(netmaskV4DecimalField2.getText().toString());
                     ipv4.netmask.fields[2].setBinaryFromDecimal();
                     if (ipv4.netmask.fields[2].binaryValue[0]) {netmaskV4BinaryField20.setText("1");} else {netmaskV4BinaryField20.setText("0");}
                     if (ipv4.netmask.fields[2].binaryValue[1]) {netmaskV4BinaryField21.setText("1");} else {netmaskV4BinaryField21.setText("0");}
@@ -249,9 +249,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     e.printStackTrace();
                 }
             }
-            if (v == netmaskV4Field3) {
+            if (v == netmaskV4DecimalField3) {
                 try {
-                    ipv4.netmask.fields[3].decimalValue = Integer.valueOf(netmaskV4Field3.getText().toString());
+                    ipv4.netmask.fields[3].decimalValue = Integer.valueOf(netmaskV4DecimalField3.getText().toString());
                     ipv4.netmask.fields[3].setBinaryFromDecimal();
                     if (ipv4.netmask.fields[3].binaryValue[0]) {netmaskV4BinaryField30.setText("1");} else {netmaskV4BinaryField30.setText("0");}
                     if (ipv4.netmask.fields[3].binaryValue[1]) {netmaskV4BinaryField31.setText("1");} else {netmaskV4BinaryField31.setText("0");}

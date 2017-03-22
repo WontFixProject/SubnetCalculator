@@ -11,7 +11,7 @@ public class ByteV4 {
     public String hexadecimalValue;
     public boolean[] binaryValue;
 
-    //Constructor (no value)
+    //Constructor (no value, defaulting to zero)
     public ByteV4 () {
         decimalValue = 0;
         this.binaryValue = new boolean[8];
