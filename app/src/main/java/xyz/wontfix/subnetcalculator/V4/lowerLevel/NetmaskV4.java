@@ -1,9 +1,5 @@
 package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
-/**
- * Created by eneviere on 3/18/2017.
- */
-
 public class NetmaskV4 extends AddressV4 {
 
                                                 /*
@@ -109,12 +105,7 @@ public class NetmaskV4 extends AddressV4 {
     }
 
     private boolean wouldBeAValidDecimalNetmask(int field, int decimalValue) {
-
-        if (field > 0 && decimalValue == 0 && bytes[field-1].getDecimalValue() != 0)
-            return false;
-        if (field < 3 && decimalValue != 0 && bytes[field+1].getDecimalValue() == 0)
-            return false;
-        return true;
+        return ((field == 0 && decimalValue != 0 && bytes[field+1].getDecimalValue() == 255) || ((field == 1 || field == 2) && decimalValue != 255 && bytes[field-1].getDecimalValue() == 0 || decimalValue != 0 && bytes[field+1].getDecimalValue() == 255) || (field == 3 && decimalValue != 255 && bytes[field-1].getDecimalValue() == 0));
     }
 
     //LOGIC IS FLAWED - NEED RE-WRITE

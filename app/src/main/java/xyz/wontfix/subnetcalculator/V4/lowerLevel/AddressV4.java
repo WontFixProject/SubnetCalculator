@@ -1,9 +1,5 @@
 package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
-/**
- * Created by eneviere on 3/18/2017.
- */
-
 public class AddressV4 {
 
                                                 /*
@@ -11,7 +7,7 @@ public class AddressV4 {
 # =========================================[ FIELDS ] ====================================== #
 ##############################################################################################
                                                */
-    protected ByteV4[] bytes;
+    ByteV4[] bytes;
 
                                                 /*
 ##############################################################################################
@@ -37,19 +33,11 @@ public class AddressV4 {
     }
 
     public boolean setByteByDecimal(int field, int decimalValue) {
-        if (!isAValidDecimalValue(decimalValue))
-            return false;
-        if (!bytes[field].setDecimalValue(decimalValue))
-            return false;
-        return true;
+        return (isAValidDecimalValue(decimalValue) && bytes[field].setDecimalValue(decimalValue));
     }
 
     public boolean setByteByBinary(int field, int[] binaryValue) {
-        if (!isAValidBinaryValue(binaryValue))
-            return false;
-        if (!bytes[field].setBinaryValue(binaryValue))
-            return false;
-        return true;
+        return (isAValidBinaryValue(binaryValue) && bytes[field].setBinaryValue(binaryValue));
     }
 
                                                 /*
@@ -66,16 +54,10 @@ public class AddressV4 {
                                                 */
 
     private boolean isAValidDecimalValue(int decimalValue) {
-        if (decimalValue >= 0 && decimalValue <= 255)
-            return true;
-        else
-            return false;
+        return (decimalValue >= 0 && decimalValue <= 255);
     }
 
     private boolean isAValidBinaryValue(int[] binaryValue) {
-        if (binaryValue != null && binaryValue.length == 8)
-            return true;
-        else
-            return false;
+        return (binaryValue != null && binaryValue.length == 8);
     }
 }
