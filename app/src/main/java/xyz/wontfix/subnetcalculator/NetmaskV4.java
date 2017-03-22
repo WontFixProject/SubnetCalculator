@@ -17,6 +17,50 @@ public class NetmaskV4 {
     }
 
     //NEED TO BE CHECKED
+    public int computeAffixFromBinaryUnsecure() {
+        boolean breakpoint = false;
+        int affix = 0;
+        int field = 3;
+        int bit = 7;
+
+        while (field >= 0 && !breakpoint) {
+            while (bit >= 0 && !breakpoint) {
+                if (fields[field].binaryValue[bit] == 1) {
+                    ++affix;
+                }
+                else breakpoint = true;
+                --bit;
+            }
+            --field;
+        }
+        return affix;
+    }
+
+    //NEED TO BE CHECKED
+    public int computeAffixFromBinarySecure() {
+        boolean isValid = true;
+        boolean breakpoint = false;
+        int affix = 0;
+        int field = 3;
+        int bit = 7;
+
+        while (field >= 0 && isValid) {
+            while (bit >= 0 && isValid) {
+                if (fields[field].binaryValue[bit] == 0 && !breakpoint) {
+                    breakpoint = true;
+                }
+                if (fields[field].binaryValue[bit] == 1) {
+                    if (breakpoint) isValid = false;
+                    else ++affix;
+                }
+                --bit;
+            }
+            --field;
+        }
+        if (isValid) return affix;
+        else return -1;
+    }
+    //NEED TO BE CHECKED
     public boolean isAValidBinaryNetmask() {
 
         boolean isValid = true;
