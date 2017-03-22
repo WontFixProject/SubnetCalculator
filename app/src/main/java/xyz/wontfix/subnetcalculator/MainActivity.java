@@ -8,262 +8,192 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
 
-    private EditText addressV4DecimalField0, addressV4DecimalField1, addressV4DecimalField2, addressV4DecimalField3;
-    private EditText addressV4BinaryField00, addressV4BinaryField01,addressV4BinaryField02,addressV4BinaryField03,addressV4BinaryField04,addressV4BinaryField05,addressV4BinaryField06,addressV4BinaryField07;
-    private EditText addressV4BinaryField10, addressV4BinaryField11,addressV4BinaryField12,addressV4BinaryField13,addressV4BinaryField14,addressV4BinaryField15,addressV4BinaryField16,addressV4BinaryField17;
-    private EditText addressV4BinaryField20, addressV4BinaryField21,addressV4BinaryField22,addressV4BinaryField23,addressV4BinaryField24,addressV4BinaryField25,addressV4BinaryField26,addressV4BinaryField27;
-    private EditText addressV4BinaryField30, addressV4BinaryField31,addressV4BinaryField32,addressV4BinaryField33,addressV4BinaryField34,addressV4BinaryField35,addressV4BinaryField36,addressV4BinaryField37;
+                                                    /*
+    ##############################################################################################
+    # =====================================[ PRIVATE FIELDS ]=================================== #
+    ##############################################################################################
+                                                    */
+    private EditText[] addressV4DecimalField;
+    private EditText[][] addressV4BinaryField;
 
-    private EditText netmaskV4DecimalField0, netmaskV4DecimalField1, netmaskV4DecimalField2, netmaskV4DecimalField3;
-    private EditText netmaskV4BinaryField00, netmaskV4BinaryField01,netmaskV4BinaryField02,netmaskV4BinaryField03,netmaskV4BinaryField04,netmaskV4BinaryField05,netmaskV4BinaryField06,netmaskV4BinaryField07;
-    private EditText netmaskV4BinaryField10, netmaskV4BinaryField11,netmaskV4BinaryField12,netmaskV4BinaryField13,netmaskV4BinaryField14,netmaskV4BinaryField15,netmaskV4BinaryField16,netmaskV4BinaryField17;
-    private EditText netmaskV4BinaryField20, netmaskV4BinaryField21,netmaskV4BinaryField22,netmaskV4BinaryField23,netmaskV4BinaryField24,netmaskV4BinaryField25,netmaskV4BinaryField26,netmaskV4BinaryField27;
-    private EditText netmaskV4BinaryField30, netmaskV4BinaryField31,netmaskV4BinaryField32,netmaskV4BinaryField33,netmaskV4BinaryField34,netmaskV4BinaryField35,netmaskV4BinaryField36,netmaskV4BinaryField37;
-    
+    private EditText[] netmaskV4DecimalField;
+    private EditText[][] netmaskV4BinaryField;
+
     public IPV4 ipv4;
 
+                                                    /*
+    ##############################################################################################
+    # ================================[ ACTIVITY STATE METHODS ]================================ #
+    ##############################################################################################
+                                                    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /************************************
+         * Objects and arrays instantiating *
+         ************************************/
         ipv4 = new IPV4();
 
-        addressV4DecimalField0 = (EditText) findViewById(R.id.addressV4_decimal_field0);
-        addressV4DecimalField1 = (EditText) findViewById(R.id.addressV4_decimal_field1);
-        addressV4DecimalField2 = (EditText) findViewById(R.id.addressV4_decimal_field2);
-        addressV4DecimalField3 = (EditText) findViewById(R.id.addressV4_decimal_field3);
+        addressV4DecimalField = new EditText[4];
+        netmaskV4DecimalField = new EditText[4];
 
-        addressV4BinaryField00 = (EditText) findViewById(R.id.addressV4_binary_field00);
-        addressV4BinaryField01 = (EditText) findViewById(R.id.addressV4_binary_field01);
-        addressV4BinaryField02 = (EditText) findViewById(R.id.addressV4_binary_field02);
-        addressV4BinaryField03 = (EditText) findViewById(R.id.addressV4_binary_field03);
-        addressV4BinaryField04 = (EditText) findViewById(R.id.addressV4_binary_field04);
-        addressV4BinaryField05 = (EditText) findViewById(R.id.addressV4_binary_field05);
-        addressV4BinaryField06 = (EditText) findViewById(R.id.addressV4_binary_field06);
-        addressV4BinaryField07 = (EditText) findViewById(R.id.addressV4_binary_field07);
-        addressV4BinaryField00 = (EditText) findViewById(R.id.addressV4_binary_field00);
+        addressV4BinaryField = new EditText[4][8];
+        netmaskV4BinaryField = new EditText[4][8];
+
+        /*******************************************
+         *  Bind XML UI elements to java variables *
+         *******************************************/
+        addressV4DecimalField[0] = (EditText) findViewById(R.id.addressV4_decimal_field0);
+        addressV4DecimalField[1] = (EditText) findViewById(R.id.addressV4_decimal_field1);
+        addressV4DecimalField[2] = (EditText) findViewById(R.id.addressV4_decimal_field2);
+        addressV4DecimalField[3] = (EditText) findViewById(R.id.addressV4_decimal_field3);
+
+        addressV4BinaryField[0][0] = (EditText) findViewById(R.id.addressV4_binary_field00);
+        addressV4BinaryField[0][1] = (EditText) findViewById(R.id.addressV4_binary_field01);
+        addressV4BinaryField[0][2] = (EditText) findViewById(R.id.addressV4_binary_field02);
+        addressV4BinaryField[0][3] = (EditText) findViewById(R.id.addressV4_binary_field03);
+        addressV4BinaryField[0][4] = (EditText) findViewById(R.id.addressV4_binary_field04);
+        addressV4BinaryField[0][5] = (EditText) findViewById(R.id.addressV4_binary_field05);
+        addressV4BinaryField[0][6] = (EditText) findViewById(R.id.addressV4_binary_field06);
+        addressV4BinaryField[0][7] = (EditText) findViewById(R.id.addressV4_binary_field07);
+        addressV4BinaryField[0][0] = (EditText) findViewById(R.id.addressV4_binary_field00);
         
-        addressV4BinaryField10 = (EditText) findViewById(R.id.addressV4_binary_field10);
-        addressV4BinaryField11 = (EditText) findViewById(R.id.addressV4_binary_field11);
-        addressV4BinaryField12 = (EditText) findViewById(R.id.addressV4_binary_field12);
-        addressV4BinaryField13 = (EditText) findViewById(R.id.addressV4_binary_field13);
-        addressV4BinaryField14 = (EditText) findViewById(R.id.addressV4_binary_field14);
-        addressV4BinaryField15 = (EditText) findViewById(R.id.addressV4_binary_field15);
-        addressV4BinaryField16 = (EditText) findViewById(R.id.addressV4_binary_field16);
-        addressV4BinaryField17 = (EditText) findViewById(R.id.addressV4_binary_field17);
+        addressV4BinaryField[1][0] = (EditText) findViewById(R.id.addressV4_binary_field10);
+        addressV4BinaryField[1][1] = (EditText) findViewById(R.id.addressV4_binary_field11);
+        addressV4BinaryField[1][2] = (EditText) findViewById(R.id.addressV4_binary_field12);
+        addressV4BinaryField[1][3] = (EditText) findViewById(R.id.addressV4_binary_field13);
+        addressV4BinaryField[1][4] = (EditText) findViewById(R.id.addressV4_binary_field14);
+        addressV4BinaryField[1][5] = (EditText) findViewById(R.id.addressV4_binary_field15);
+        addressV4BinaryField[1][6] = (EditText) findViewById(R.id.addressV4_binary_field16);
+        addressV4BinaryField[1][7] = (EditText) findViewById(R.id.addressV4_binary_field17);
         
-        addressV4BinaryField20 = (EditText) findViewById(R.id.addressV4_binary_field20);
-        addressV4BinaryField21 = (EditText) findViewById(R.id.addressV4_binary_field21);
-        addressV4BinaryField22 = (EditText) findViewById(R.id.addressV4_binary_field22);
-        addressV4BinaryField23 = (EditText) findViewById(R.id.addressV4_binary_field23);
-        addressV4BinaryField24 = (EditText) findViewById(R.id.addressV4_binary_field24);
-        addressV4BinaryField25 = (EditText) findViewById(R.id.addressV4_binary_field25);
-        addressV4BinaryField26 = (EditText) findViewById(R.id.addressV4_binary_field26);
-        addressV4BinaryField27 = (EditText) findViewById(R.id.addressV4_binary_field27);
+        addressV4BinaryField[2][0] = (EditText) findViewById(R.id.addressV4_binary_field20);
+        addressV4BinaryField[2][1] = (EditText) findViewById(R.id.addressV4_binary_field21);
+        addressV4BinaryField[2][2] = (EditText) findViewById(R.id.addressV4_binary_field22);
+        addressV4BinaryField[2][3] = (EditText) findViewById(R.id.addressV4_binary_field23);
+        addressV4BinaryField[2][4] = (EditText) findViewById(R.id.addressV4_binary_field24);
+        addressV4BinaryField[2][5] = (EditText) findViewById(R.id.addressV4_binary_field25);
+        addressV4BinaryField[2][6] = (EditText) findViewById(R.id.addressV4_binary_field26);
+        addressV4BinaryField[2][7] = (EditText) findViewById(R.id.addressV4_binary_field27);
         
-        addressV4BinaryField30 = (EditText) findViewById(R.id.addressV4_binary_field30);
-        addressV4BinaryField31 = (EditText) findViewById(R.id.addressV4_binary_field31);
-        addressV4BinaryField32 = (EditText) findViewById(R.id.addressV4_binary_field32);
-        addressV4BinaryField33 = (EditText) findViewById(R.id.addressV4_binary_field33);
-        addressV4BinaryField34 = (EditText) findViewById(R.id.addressV4_binary_field34);
-        addressV4BinaryField35 = (EditText) findViewById(R.id.addressV4_binary_field35);
-        addressV4BinaryField36 = (EditText) findViewById(R.id.addressV4_binary_field36);
-        addressV4BinaryField37 = (EditText) findViewById(R.id.addressV4_binary_field37);
+        addressV4BinaryField[3][0] = (EditText) findViewById(R.id.addressV4_binary_field30);
+        addressV4BinaryField[3][1] = (EditText) findViewById(R.id.addressV4_binary_field31);
+        addressV4BinaryField[3][2] = (EditText) findViewById(R.id.addressV4_binary_field32);
+        addressV4BinaryField[3][3] = (EditText) findViewById(R.id.addressV4_binary_field33);
+        addressV4BinaryField[3][4] = (EditText) findViewById(R.id.addressV4_binary_field34);
+        addressV4BinaryField[3][5] = (EditText) findViewById(R.id.addressV4_binary_field35);
+        addressV4BinaryField[3][6] = (EditText) findViewById(R.id.addressV4_binary_field36);
+        addressV4BinaryField[3][7] = (EditText) findViewById(R.id.addressV4_binary_field37);
 
-        netmaskV4DecimalField0 = (EditText) findViewById(R.id.netmaskV4_decimal_field0);
-        netmaskV4DecimalField1 = (EditText) findViewById(R.id.netmaskV4_decimal_field1);
-        netmaskV4DecimalField2 = (EditText) findViewById(R.id.netmaskV4_decimal_field2);
-        netmaskV4DecimalField3 = (EditText) findViewById(R.id.netmaskV4_decimal_field3);
+        netmaskV4DecimalField[0] = (EditText) findViewById(R.id.netmaskV4_decimal_field0);
+        netmaskV4DecimalField[1] = (EditText) findViewById(R.id.netmaskV4_decimal_field1);
+        netmaskV4DecimalField[2] = (EditText) findViewById(R.id.netmaskV4_decimal_field2);
+        netmaskV4DecimalField[3] = (EditText) findViewById(R.id.netmaskV4_decimal_field3);
 
-        netmaskV4BinaryField00 = (EditText) findViewById(R.id.netmaskV4_binary_field00);
-        netmaskV4BinaryField01 = (EditText) findViewById(R.id.netmaskV4_binary_field01);
-        netmaskV4BinaryField02 = (EditText) findViewById(R.id.netmaskV4_binary_field02);
-        netmaskV4BinaryField03 = (EditText) findViewById(R.id.netmaskV4_binary_field03);
-        netmaskV4BinaryField04 = (EditText) findViewById(R.id.netmaskV4_binary_field04);
-        netmaskV4BinaryField05 = (EditText) findViewById(R.id.netmaskV4_binary_field05);
-        netmaskV4BinaryField06 = (EditText) findViewById(R.id.netmaskV4_binary_field06);
-        netmaskV4BinaryField07 = (EditText) findViewById(R.id.netmaskV4_binary_field07);
-        netmaskV4BinaryField00 = (EditText) findViewById(R.id.netmaskV4_binary_field00);
+        netmaskV4BinaryField[0][0] = (EditText) findViewById(R.id.netmaskV4_binary_field00);
+        netmaskV4BinaryField[0][1] = (EditText) findViewById(R.id.netmaskV4_binary_field01);
+        netmaskV4BinaryField[0][2] = (EditText) findViewById(R.id.netmaskV4_binary_field02);
+        netmaskV4BinaryField[0][3] = (EditText) findViewById(R.id.netmaskV4_binary_field03);
+        netmaskV4BinaryField[0][4] = (EditText) findViewById(R.id.netmaskV4_binary_field04);
+        netmaskV4BinaryField[0][5] = (EditText) findViewById(R.id.netmaskV4_binary_field05);
+        netmaskV4BinaryField[0][6] = (EditText) findViewById(R.id.netmaskV4_binary_field06);
+        netmaskV4BinaryField[0][7] = (EditText) findViewById(R.id.netmaskV4_binary_field07);
+        netmaskV4BinaryField[0][0] = (EditText) findViewById(R.id.netmaskV4_binary_field00);
 
-        netmaskV4BinaryField10 = (EditText) findViewById(R.id.netmaskV4_binary_field10);
-        netmaskV4BinaryField11 = (EditText) findViewById(R.id.netmaskV4_binary_field11);
-        netmaskV4BinaryField12 = (EditText) findViewById(R.id.netmaskV4_binary_field12);
-        netmaskV4BinaryField13 = (EditText) findViewById(R.id.netmaskV4_binary_field13);
-        netmaskV4BinaryField14 = (EditText) findViewById(R.id.netmaskV4_binary_field14);
-        netmaskV4BinaryField15 = (EditText) findViewById(R.id.netmaskV4_binary_field15);
-        netmaskV4BinaryField16 = (EditText) findViewById(R.id.netmaskV4_binary_field16);
-        netmaskV4BinaryField17 = (EditText) findViewById(R.id.netmaskV4_binary_field17);
+        netmaskV4BinaryField[1][0] = (EditText) findViewById(R.id.netmaskV4_binary_field10);
+        netmaskV4BinaryField[1][1] = (EditText) findViewById(R.id.netmaskV4_binary_field11);
+        netmaskV4BinaryField[1][2] = (EditText) findViewById(R.id.netmaskV4_binary_field12);
+        netmaskV4BinaryField[1][3] = (EditText) findViewById(R.id.netmaskV4_binary_field13);
+        netmaskV4BinaryField[1][4] = (EditText) findViewById(R.id.netmaskV4_binary_field14);
+        netmaskV4BinaryField[1][5] = (EditText) findViewById(R.id.netmaskV4_binary_field15);
+        netmaskV4BinaryField[1][6] = (EditText) findViewById(R.id.netmaskV4_binary_field16);
+        netmaskV4BinaryField[1][7] = (EditText) findViewById(R.id.netmaskV4_binary_field17);
 
-        netmaskV4BinaryField20 = (EditText) findViewById(R.id.netmaskV4_binary_field20);
-        netmaskV4BinaryField21 = (EditText) findViewById(R.id.netmaskV4_binary_field21);
-        netmaskV4BinaryField22 = (EditText) findViewById(R.id.netmaskV4_binary_field22);
-        netmaskV4BinaryField23 = (EditText) findViewById(R.id.netmaskV4_binary_field23);
-        netmaskV4BinaryField24 = (EditText) findViewById(R.id.netmaskV4_binary_field24);
-        netmaskV4BinaryField25 = (EditText) findViewById(R.id.netmaskV4_binary_field25);
-        netmaskV4BinaryField26 = (EditText) findViewById(R.id.netmaskV4_binary_field26);
-        netmaskV4BinaryField27 = (EditText) findViewById(R.id.netmaskV4_binary_field27);
+        netmaskV4BinaryField[2][0] = (EditText) findViewById(R.id.netmaskV4_binary_field20);
+        netmaskV4BinaryField[2][1] = (EditText) findViewById(R.id.netmaskV4_binary_field21);
+        netmaskV4BinaryField[2][2] = (EditText) findViewById(R.id.netmaskV4_binary_field22);
+        netmaskV4BinaryField[2][3] = (EditText) findViewById(R.id.netmaskV4_binary_field23);
+        netmaskV4BinaryField[2][4] = (EditText) findViewById(R.id.netmaskV4_binary_field24);
+        netmaskV4BinaryField[2][5] = (EditText) findViewById(R.id.netmaskV4_binary_field25);
+        netmaskV4BinaryField[2][6] = (EditText) findViewById(R.id.netmaskV4_binary_field26);
+        netmaskV4BinaryField[2][7] = (EditText) findViewById(R.id.netmaskV4_binary_field27);
 
-        netmaskV4BinaryField30 = (EditText) findViewById(R.id.netmaskV4_binary_field30);
-        netmaskV4BinaryField31 = (EditText) findViewById(R.id.netmaskV4_binary_field31);
-        netmaskV4BinaryField32 = (EditText) findViewById(R.id.netmaskV4_binary_field32);
-        netmaskV4BinaryField33 = (EditText) findViewById(R.id.netmaskV4_binary_field33);
-        netmaskV4BinaryField34 = (EditText) findViewById(R.id.netmaskV4_binary_field34);
-        netmaskV4BinaryField35 = (EditText) findViewById(R.id.netmaskV4_binary_field35);
-        netmaskV4BinaryField36 = (EditText) findViewById(R.id.netmaskV4_binary_field36);
-        netmaskV4BinaryField37 = (EditText) findViewById(R.id.netmaskV4_binary_field37);
+        netmaskV4BinaryField[3][0] = (EditText) findViewById(R.id.netmaskV4_binary_field30);
+        netmaskV4BinaryField[3][1] = (EditText) findViewById(R.id.netmaskV4_binary_field31);
+        netmaskV4BinaryField[3][2] = (EditText) findViewById(R.id.netmaskV4_binary_field32);
+        netmaskV4BinaryField[3][3] = (EditText) findViewById(R.id.netmaskV4_binary_field33);
+        netmaskV4BinaryField[3][4] = (EditText) findViewById(R.id.netmaskV4_binary_field34);
+        netmaskV4BinaryField[3][5] = (EditText) findViewById(R.id.netmaskV4_binary_field35);
+        netmaskV4BinaryField[3][6] = (EditText) findViewById(R.id.netmaskV4_binary_field36);
+        netmaskV4BinaryField[3][7] = (EditText) findViewById(R.id.netmaskV4_binary_field37);
 
-        addressV4DecimalField0.setOnFocusChangeListener(this);
-        addressV4DecimalField1.setOnFocusChangeListener(this);
-        addressV4DecimalField2.setOnFocusChangeListener(this);
-        addressV4DecimalField3.setOnFocusChangeListener(this);
+        /***************************************
+         *  Set event listeners for UI element *
+         ***************************************/
+        addressV4DecimalField[0].setOnFocusChangeListener(this);
+        addressV4DecimalField[1].setOnFocusChangeListener(this);
+        addressV4DecimalField[2].setOnFocusChangeListener(this);
+        addressV4DecimalField[3].setOnFocusChangeListener(this);
 
-        netmaskV4DecimalField0.setOnFocusChangeListener(this);
-        netmaskV4DecimalField1.setOnFocusChangeListener(this);
-        netmaskV4DecimalField2.setOnFocusChangeListener(this);
-        netmaskV4DecimalField3.setOnFocusChangeListener(this);
+        netmaskV4DecimalField[0].setOnFocusChangeListener(this);
+        netmaskV4DecimalField[1].setOnFocusChangeListener(this);
+        netmaskV4DecimalField[2].setOnFocusChangeListener(this);
+        netmaskV4DecimalField[3].setOnFocusChangeListener(this);
 
-        onFocusChange(addressV4DecimalField0, false);
-        onFocusChange(addressV4DecimalField1, false);
-        onFocusChange(addressV4DecimalField2, false);
-        onFocusChange(addressV4DecimalField3, false);
+        /****************************
+         *  Force binary UI refresh *
+         ****************************/
+        onFocusChange(addressV4DecimalField[0], false);
+        onFocusChange(addressV4DecimalField[1], false);
+        onFocusChange(addressV4DecimalField[2], false);
+        onFocusChange(addressV4DecimalField[3], false);
 
-        onFocusChange(netmaskV4DecimalField0, false);
-        onFocusChange(netmaskV4DecimalField1, false);
-        onFocusChange(netmaskV4DecimalField2, false);
-        onFocusChange(netmaskV4DecimalField3, false);
+        onFocusChange(netmaskV4DecimalField[0], false);
+        onFocusChange(netmaskV4DecimalField[1], false);
+        onFocusChange(netmaskV4DecimalField[2], false);
+        onFocusChange(netmaskV4DecimalField[3], false);
     }
 
+                                                    /*
+    ##############################################################################################
+    # ======================================[ UI LISTENERS ] =================================== #
+    ##############################################################################################
+                                                    */
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
+
+        int field = -1;
+        int type = -1;
+
         if (!hasFocus) {
-            if (v == addressV4DecimalField0) {
-                try {
-                    ipv4.address.fields[0].decimalValue = Integer.valueOf(addressV4DecimalField0.getText().toString());
-                    ipv4.address.fields[0].setBinaryFromDecimal();
-                    if (ipv4.address.fields[0].binaryValue[0]) {addressV4BinaryField00.setText("1");} else {addressV4BinaryField00.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[1]) {addressV4BinaryField01.setText("1");} else {addressV4BinaryField01.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[2]) {addressV4BinaryField02.setText("1");} else {addressV4BinaryField02.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[3]) {addressV4BinaryField03.setText("1");} else {addressV4BinaryField03.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[4]) {addressV4BinaryField04.setText("1");} else {addressV4BinaryField04.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[5]) {addressV4BinaryField05.setText("1");} else {addressV4BinaryField05.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[6]) {addressV4BinaryField06.setText("1");} else {addressV4BinaryField06.setText("0");}
-                    if (ipv4.address.fields[0].binaryValue[7]) {addressV4BinaryField07.setText("1");} else {addressV4BinaryField07.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == addressV4DecimalField1) {
-                try {
-                    ipv4.address.fields[1].decimalValue = Integer.valueOf(addressV4DecimalField1.getText().toString());
-                    ipv4.address.fields[1].setBinaryFromDecimal();
-                    if (ipv4.address.fields[1].binaryValue[0]) {addressV4BinaryField10.setText("1");} else {addressV4BinaryField10.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[1]) {addressV4BinaryField11.setText("1");} else {addressV4BinaryField11.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[2]) {addressV4BinaryField12.setText("1");} else {addressV4BinaryField12.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[3]) {addressV4BinaryField13.setText("1");} else {addressV4BinaryField13.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[4]) {addressV4BinaryField14.setText("1");} else {addressV4BinaryField14.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[5]) {addressV4BinaryField15.setText("1");} else {addressV4BinaryField15.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[6]) {addressV4BinaryField16.setText("1");} else {addressV4BinaryField16.setText("0");}
-                    if (ipv4.address.fields[1].binaryValue[7]) {addressV4BinaryField17.setText("1");} else {addressV4BinaryField17.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == addressV4DecimalField2) {
-                try {
-                    ipv4.address.fields[2].decimalValue = Integer.valueOf(addressV4DecimalField2.getText().toString());
-                    ipv4.address.fields[2].setBinaryFromDecimal();
-                    if (ipv4.address.fields[2].binaryValue[0]) {addressV4BinaryField20.setText("1");} else {addressV4BinaryField20.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[1]) {addressV4BinaryField21.setText("1");} else {addressV4BinaryField21.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[2]) {addressV4BinaryField22.setText("1");} else {addressV4BinaryField22.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[3]) {addressV4BinaryField23.setText("1");} else {addressV4BinaryField23.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[4]) {addressV4BinaryField24.setText("1");} else {addressV4BinaryField24.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[5]) {addressV4BinaryField25.setText("1");} else {addressV4BinaryField25.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[6]) {addressV4BinaryField26.setText("1");} else {addressV4BinaryField26.setText("0");}
-                    if (ipv4.address.fields[2].binaryValue[7]) {addressV4BinaryField27.setText("1");} else {addressV4BinaryField27.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == addressV4DecimalField3) {
-                try {
-                    ipv4.address.fields[3].decimalValue = Integer.valueOf(addressV4DecimalField3.getText().toString());
-                    ipv4.address.fields[3].setBinaryFromDecimal();
-                    if (ipv4.address.fields[3].binaryValue[0]) {addressV4BinaryField30.setText("1");} else {addressV4BinaryField30.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[1]) {addressV4BinaryField31.setText("1");} else {addressV4BinaryField31.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[2]) {addressV4BinaryField32.setText("1");} else {addressV4BinaryField32.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[3]) {addressV4BinaryField33.setText("1");} else {addressV4BinaryField33.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[4]) {addressV4BinaryField34.setText("1");} else {addressV4BinaryField34.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[5]) {addressV4BinaryField35.setText("1");} else {addressV4BinaryField35.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[6]) {addressV4BinaryField36.setText("1");} else {addressV4BinaryField36.setText("0");}
-                    if (ipv4.address.fields[3].binaryValue[7]) {addressV4BinaryField37.setText("1");} else {addressV4BinaryField37.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == netmaskV4DecimalField0) {
-                try {
-                    ipv4.netmask.fields[0].decimalValue = Integer.valueOf(netmaskV4DecimalField0.getText().toString());
-                    ipv4.netmask.fields[0].setBinaryFromDecimal();
-                    if (ipv4.netmask.fields[0].binaryValue[0]) {netmaskV4BinaryField00.setText("1");} else {netmaskV4BinaryField00.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[1]) {netmaskV4BinaryField01.setText("1");} else {netmaskV4BinaryField01.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[2]) {netmaskV4BinaryField02.setText("1");} else {netmaskV4BinaryField02.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[3]) {netmaskV4BinaryField03.setText("1");} else {netmaskV4BinaryField03.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[4]) {netmaskV4BinaryField04.setText("1");} else {netmaskV4BinaryField04.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[5]) {netmaskV4BinaryField05.setText("1");} else {netmaskV4BinaryField05.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[6]) {netmaskV4BinaryField06.setText("1");} else {netmaskV4BinaryField06.setText("0");}
-                    if (ipv4.netmask.fields[0].binaryValue[7]) {netmaskV4BinaryField07.setText("1");} else {netmaskV4BinaryField07.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == netmaskV4DecimalField1) {
-                try {
-                    ipv4.netmask.fields[1].decimalValue = Integer.valueOf(netmaskV4DecimalField1.getText().toString());
-                    ipv4.netmask.fields[1].setBinaryFromDecimal();
-                    if (ipv4.netmask.fields[1].binaryValue[0]) {netmaskV4BinaryField10.setText("1");} else {netmaskV4BinaryField10.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[1]) {netmaskV4BinaryField11.setText("1");} else {netmaskV4BinaryField11.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[2]) {netmaskV4BinaryField12.setText("1");} else {netmaskV4BinaryField12.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[3]) {netmaskV4BinaryField13.setText("1");} else {netmaskV4BinaryField13.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[4]) {netmaskV4BinaryField14.setText("1");} else {netmaskV4BinaryField14.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[5]) {netmaskV4BinaryField15.setText("1");} else {netmaskV4BinaryField15.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[6]) {netmaskV4BinaryField16.setText("1");} else {netmaskV4BinaryField16.setText("0");}
-                    if (ipv4.netmask.fields[1].binaryValue[7]) {netmaskV4BinaryField17.setText("1");} else {netmaskV4BinaryField17.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == netmaskV4DecimalField2) {
-                try {
-                    ipv4.netmask.fields[2].decimalValue = Integer.valueOf(netmaskV4DecimalField2.getText().toString());
-                    ipv4.netmask.fields[2].setBinaryFromDecimal();
-                    if (ipv4.netmask.fields[2].binaryValue[0]) {netmaskV4BinaryField20.setText("1");} else {netmaskV4BinaryField20.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[1]) {netmaskV4BinaryField21.setText("1");} else {netmaskV4BinaryField21.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[2]) {netmaskV4BinaryField22.setText("1");} else {netmaskV4BinaryField22.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[3]) {netmaskV4BinaryField23.setText("1");} else {netmaskV4BinaryField23.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[4]) {netmaskV4BinaryField24.setText("1");} else {netmaskV4BinaryField24.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[5]) {netmaskV4BinaryField25.setText("1");} else {netmaskV4BinaryField25.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[6]) {netmaskV4BinaryField26.setText("1");} else {netmaskV4BinaryField26.setText("0");}
-                    if (ipv4.netmask.fields[2].binaryValue[7]) {netmaskV4BinaryField27.setText("1");} else {netmaskV4BinaryField27.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (v == netmaskV4DecimalField3) {
-                try {
-                    ipv4.netmask.fields[3].decimalValue = Integer.valueOf(netmaskV4DecimalField3.getText().toString());
-                    ipv4.netmask.fields[3].setBinaryFromDecimal();
-                    if (ipv4.netmask.fields[3].binaryValue[0]) {netmaskV4BinaryField30.setText("1");} else {netmaskV4BinaryField30.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[1]) {netmaskV4BinaryField31.setText("1");} else {netmaskV4BinaryField31.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[2]) {netmaskV4BinaryField32.setText("1");} else {netmaskV4BinaryField32.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[3]) {netmaskV4BinaryField33.setText("1");} else {netmaskV4BinaryField33.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[4]) {netmaskV4BinaryField34.setText("1");} else {netmaskV4BinaryField34.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[5]) {netmaskV4BinaryField35.setText("1");} else {netmaskV4BinaryField35.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[6]) {netmaskV4BinaryField36.setText("1");} else {netmaskV4BinaryField36.setText("0");}
-                    if (ipv4.netmask.fields[3].binaryValue[7]) {netmaskV4BinaryField37.setText("1");} else {netmaskV4BinaryField37.setText("0");}
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+
+            //type 0: address update, type 1: netmask update, field: which field to update
+            if (v == addressV4DecimalField[0]) {type = 0; field = 0;}
+            if (v == addressV4DecimalField[1]) {type = 0; field = 1;}
+            if (v == addressV4DecimalField[2]) {type = 0; field = 2;}
+            if (v == addressV4DecimalField[3]) {type = 0; field = 3;}
+            if (v == netmaskV4DecimalField[0]) {type = 1; field = 0;}
+            if (v == netmaskV4DecimalField[1]) {type = 1; field = 1;}
+            if (v == netmaskV4DecimalField[2]) {type = 1; field = 2;}
+            if (v == netmaskV4DecimalField[3]) {type = 1; field = 3;}
+
+            switch (type) {
+                case (0):
+                    ipv4.address.fields[field].decimalValue = Integer.valueOf(addressV4DecimalField[field].getText().toString());
+                    ipv4.address.fields[field].setBinaryFromDecimal();
+                    for (int bit=0; bit<8; ++bit) {
+                        addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.fields[field].binaryValue[bit]));
+                    }
+                    break;
+                case (1):
+                    ipv4.netmask.fields[field].decimalValue = Integer.valueOf(netmaskV4DecimalField[field].getText().toString());
+                    ipv4.netmask.fields[field].setBinaryFromDecimal();
+                    for (int bit=0; bit<8; ++bit) {
+                        netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.fields[field].binaryValue[bit]));
+                    }
+                    break;
             }
         }
     }

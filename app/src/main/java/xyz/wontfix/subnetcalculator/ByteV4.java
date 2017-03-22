@@ -9,12 +9,12 @@ import static java.lang.Math.pow;
 public class ByteV4 {
     public int decimalValue;
     public String hexadecimalValue;
-    public boolean[] binaryValue;
+    public int[] binaryValue;
 
     //Constructor (no value, defaulting to zero)
     public ByteV4 () {
         decimalValue = 0;
-        this.binaryValue = new boolean[8];
+        this.binaryValue = new int[8];
         setBinaryFromDecimal();
         setHexadecimalFromBinary();
     }
@@ -22,7 +22,7 @@ public class ByteV4 {
     //Constructor (from decimal value)
     public ByteV4 (int decimalValue) {
         this.decimalValue = decimalValue;
-        this.binaryValue = new boolean[8];
+        this.binaryValue = new int[8];
         setBinaryFromDecimal();
         setHexadecimalFromBinary();
     }
@@ -33,15 +33,15 @@ public class ByteV4 {
         int power = 7;
 
         for (int i=0; i<8; ++i) {
-            binaryValue[i] = false;
+            binaryValue[i] = 0;
         }
         while (buffer > 0 && power >= 0) {
             if (buffer >= pow(2,power)) {
                 buffer -= (int)pow(2,power);
-                binaryValue[power] = true;
+                binaryValue[power] = 1;
             }
             else {
-                binaryValue[power] = false;
+                binaryValue[power] = 0;
             }
             power = power - 1;
         }
