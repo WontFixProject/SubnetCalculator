@@ -181,17 +181,15 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
             switch (type) {
                 case (0):
-                    ipv4.address.fields[field].decimalValue = Integer.valueOf(addressV4DecimalField[field].getText().toString());
-                    ipv4.address.fields[field].setBinaryFromDecimal();
+                    ipv4.address.bytes[field].setDecimalValue(Integer.valueOf(addressV4DecimalField[field].getText().toString()));
                     for (int bit=0; bit<8; ++bit) {
-                        addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.fields[field].binaryValue[bit]));
+                        addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.bytes[field].getBinaryValue()[bit]));
                     }
                     break;
                 case (1):
-                    ipv4.netmask.fields[field].decimalValue = Integer.valueOf(netmaskV4DecimalField[field].getText().toString());
-                    ipv4.netmask.fields[field].setBinaryFromDecimal();
+                    ipv4.netmask.bytes[field].setDecimalValue(Integer.valueOf(netmaskV4DecimalField[field].getText().toString()));
                     for (int bit=0; bit<8; ++bit) {
-                        netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.fields[field].binaryValue[bit]));
+                        netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.bytes[field].getBinaryValue()[bit]));
                     }
                     break;
             }

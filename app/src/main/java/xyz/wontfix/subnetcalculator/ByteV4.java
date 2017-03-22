@@ -7,16 +7,25 @@ import static java.lang.Math.pow;
  *******************************************************************/
 
 public class ByteV4 {
-    public int decimalValue;
-    public String hexadecimalValue;
-    public int[] binaryValue;
 
+                                                /*
+##############################################################################################
+# =========================================[ FIELDS ] ====================================== #
+##############################################################################################
+                                                */
+    private int decimalValue;
+    private int[] binaryValue;
+
+                                                /*
+##############################################################################################
+# ======================================[ CONSTRUCTORS ] =================================== #
+##############################################################################################
+                                                */
     //Constructor (no value, defaulting to zero)
     public ByteV4 () {
         decimalValue = 0;
         this.binaryValue = new int[8];
         setBinaryFromDecimal();
-        setHexadecimalFromBinary();
     }
 
     //Constructor (from decimal value)
@@ -24,15 +33,57 @@ public class ByteV4 {
         this.decimalValue = decimalValue;
         this.binaryValue = new int[8];
         setBinaryFromDecimal();
-        setHexadecimalFromBinary();
     }
 
-    //Compute and set binary value from decimal value
-    public void setBinaryFromDecimal() {
+                                                /*
+##############################################################################################
+# ======================================[ GETORS/SETORS ] ================================== #
+##############################################################################################
+                                                */
+    public int getDecimalValue() {
+        return decimalValue;
+    }
+
+    public int[] getBinaryValue() {
+        return binaryValue;
+    }
+
+    public boolean setDecimalValue(int decimalValue) {
+        if (decimalValue >= 0 && decimalValue <= 255) {
+            this.decimalValue = decimalValue;
+            setBinaryFromDecimal();
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public boolean setBinaryValue(int [] binaryValue) {
+        if (binaryValue != null && binaryValue.length == 8) {
+            System.arraycopy(binaryValue, 0, this.binaryValue, 0, 8);
+            setDecimalFromBinary();
+            return true;
+        }
+        else
+            return false;
+    }
+                                                /*
+##############################################################################################
+# ======================================[ PUBLIC METHODS ] ================================= #
+##############################################################################################
+                                                */
+
+                                                /*
+##############################################################################################
+# =====================================[ PRIVATE METHODS ] ================================= #
+##############################################################################################
+                                                */
+    //Compute and set binaryValue from decimalValue
+    private void setBinaryFromDecimal() {
         int buffer = decimalValue;
         int power = 7;
 
-        for (int i=0; i<8; ++i) {
+        for (int i = 0; i < 8; ++i) {
             binaryValue[i] = 0;
         }
         while (buffer > 0 && power >= 0) {
@@ -43,12 +94,19 @@ public class ByteV4 {
             else {
                 binaryValue[power] = 0;
             }
-            power = power - 1;
+            --power;
         }
     }
 
-    //Compute and set Hexadecimal value from binary value
-    private void setHexadecimalFromBinary() {
-        //TODO
+    //Compute and set decimalValue from binaryValue
+    private void setDecimalFromBinary() {
+
+        int decimalValue = 0;
+
+        for (int bit = 7; bit >= 0; --bit) {
+            if (binaryValue[bit] == 1)
+                decimalValue += (int) pow(2,bit);
+        }
+        this.decimalValue = decimalValue;
     }
 }
