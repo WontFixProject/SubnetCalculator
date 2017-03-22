@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
     private EditText[] netmaskV4DecimalField;
     private EditText[][] netmaskV4BinaryField;
 
+    private EditText netmaskV4Prefix;
+
     public IPV4 ipv4;
 
                                                     /*
@@ -132,6 +134,8 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         netmaskV4BinaryField[3][6] = (EditText) findViewById(R.id.netmaskV4_binary_field36);
         netmaskV4BinaryField[3][7] = (EditText) findViewById(R.id.netmaskV4_binary_field37);
 
+        netmaskV4Prefix = (EditText) findViewById(R.id.netmaskV4_prefix);
+
         /***************************************
          *  Set event listeners for UI element *
          ***************************************/
@@ -144,6 +148,8 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         netmaskV4DecimalField[1].setOnFocusChangeListener(this);
         netmaskV4DecimalField[2].setOnFocusChangeListener(this);
         netmaskV4DecimalField[3].setOnFocusChangeListener(this);
+
+        netmaskV4Prefix.setOnFocusChangeListener(this);
 
         /****************************
          *  Force binary UI refresh *
@@ -172,7 +178,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
         if (!hasFocus) {
 
-            //type 0: address update, type 1: netmask update, field: which field to update
+            //type 0: address update, type 1: netmask update, type 2: netmask prefix update, field: which field to update
             if (v == addressV4DecimalField[0]) {type = 0; field = 0;}
             if (v == addressV4DecimalField[1]) {type = 0; field = 1;}
             if (v == addressV4DecimalField[2]) {type = 0; field = 2;}
@@ -181,22 +187,35 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
             if (v == netmaskV4DecimalField[1]) {type = 1; field = 1;}
             if (v == netmaskV4DecimalField[2]) {type = 1; field = 2;}
             if (v == netmaskV4DecimalField[3]) {type = 1; field = 3;}
+            if (v == netmaskV4Prefix)
+                type = 2;
 
             switch (type) {
-                case (0):
+                case 0:
                     if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString())))
                         for (int bit = 0; bit < 8; ++bit)
                             addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
                     else
                         addressV4DecimalField[field].setText(Integer.toString(ipv4.address.getByte(field).getDecimalValue()));
                     break;
-                case (1):
-                    if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString())))
+                case 1:
+                    if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()))) {
                         for (int bit = 0; bit < 8; ++bit)
                             netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
+                        netmaskV4Prefix.setText(Integer.toString(ipv4.netmask.getPrefix()));
+                    }
                     else
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
                     break;
+                case 2:
+                    if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
+                        for (int bit = 0; bit < 8; ++bit)
+                            netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
+                        netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
+                    }
+                    else
+                        netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
+
             }
         }
     }
