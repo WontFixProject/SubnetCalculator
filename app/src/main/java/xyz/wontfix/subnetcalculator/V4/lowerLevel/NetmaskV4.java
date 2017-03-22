@@ -117,13 +117,26 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
-    //LOGIC IS FLAWED - NEED RE-WRITE
+    private int binaryContent(int[] binaryValue) {
+        int content = binaryValue[0];
+        for (int bit = 1; bit < binaryValue.length; ++bit)
+            if (binaryValue[bit] != content)
+                return -1;
+        return content;
+    }
+    
+
     private boolean wouldBeAValidBinaryNetmask(int field, int[] binaryValue) {
-        if (field > 0 && binaryValue[0] == 0 && bytes[field-1].getBinaryValue()[7] != 0)
-            return false;
-        if (field < 3 && binaryValue[7] != 0 && bytes[field+1].getBinaryValue()[0] == 0)
-            return false;
-        return true;
+        switch (field) {
+            case 0:
+                return binaryContent(binaryValue) == 0 || binaryContent(bytes[field+1].getBinaryValue()) == 1;
+            case 1:
+            case 2:
+                return (binaryContent(binaryValue) == 0 && binaryContent(bytes[field-1].getBinaryValue()) == 0) || (binaryContent(binaryValue) == 1 && binaryContent(bytes[field+1].getBinaryValue()) == 1) || (binaryContent(binaryValue) == -1  && binaryContent(bytes[field-1].getBinaryValue()) == 0 && binaryContent(bytes[field+1].getBinaryValue()) == 1);
+            case 3:
+                return binaryContent(binaryValue) == 1 || binaryContent(bytes[field-1].getBinaryValue()) == 0;
+            default: return false;
+        }
     }
 
     private void setBinaryFromAffix() {
