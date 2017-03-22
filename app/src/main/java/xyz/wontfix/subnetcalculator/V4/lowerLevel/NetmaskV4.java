@@ -105,7 +105,16 @@ public class NetmaskV4 extends AddressV4 {
     }
 
     private boolean wouldBeAValidDecimalNetmask(int field, int decimalValue) {
-        return ((field == 0 && decimalValue != 0 && bytes[field+1].getDecimalValue() == 255) || ((field == 1 || field == 2) && decimalValue != 255 && bytes[field-1].getDecimalValue() == 0 || decimalValue != 0 && bytes[field+1].getDecimalValue() == 255) || (field == 3 && decimalValue != 255 && bytes[field-1].getDecimalValue() == 0));
+        switch (field) {
+            case 0:
+                return decimalValue == 0 || bytes[field+1].getDecimalValue() == 255;
+            case 1:
+            case 2:
+                return (decimalValue == 0 && bytes[field-1].getDecimalValue() == 0) || (decimalValue == 255 && bytes[field+1].getDecimalValue() == 255) || (decimalValue > 0 && decimalValue < 255 && bytes[field-1].getDecimalValue() == 0 && bytes[field+1].getDecimalValue() == 255);
+            case 3:
+                return decimalValue == 255 || bytes[field-1].getDecimalValue() == 0;
+            default: return false;
+        }
     }
 
     //LOGIC IS FLAWED - NEED RE-WRITE
