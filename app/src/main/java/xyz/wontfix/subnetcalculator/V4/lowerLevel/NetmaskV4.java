@@ -7,7 +7,7 @@ public class NetmaskV4 extends AddressV4 {
 # =========================================[ FIELDS ] ====================================== #
 ##############################################################################################
                                                 */
-    private int affix;
+    private int prefix;
 
                                                 /*
 ##############################################################################################
@@ -27,14 +27,14 @@ public class NetmaskV4 extends AddressV4 {
 # ======================================[ GETORS/SETORS ] ================================== #
 ##############################################################################################
                                                 */
-    public int getAffix() {
-        return this.affix;
+    public int getPrefix() {
+        return this.prefix;
     }
 
-    public boolean setAffix(int affix) {
-        if (affix >= 0 && affix <= 32) {
-            this.affix = affix;
-            setBinaryFromAffix();
+    public boolean setPrefix(int prefix) {
+        if (prefix >= 0 && prefix <= 32) {
+            this.prefix = prefix;
+            setBinaryFromPrefix();
             return true;
         }
         else
@@ -55,7 +55,7 @@ public class NetmaskV4 extends AddressV4 {
             return false;
         if (!bytes[field].setDecimalValue(decimalValue))
             return false;
-        setAffixFromBinary();
+        setPrefixFromBinary();
         return true;
     }
 
@@ -67,7 +67,7 @@ public class NetmaskV4 extends AddressV4 {
             return false;
         if (!bytes[field].setBinaryValue(binaryValue))
             return false;
-        setAffixFromBinary();
+        setPrefixFromBinary();
         return true;
     }
 
@@ -124,7 +124,6 @@ public class NetmaskV4 extends AddressV4 {
                 return -1;
         return content;
     }
-    
 
     private boolean wouldBeAValidBinaryNetmask(int field, int[] binaryValue) {
         switch (field) {
@@ -139,9 +138,9 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
-    private void setBinaryFromAffix() {
+    private void setBinaryFromPrefix() {
 
-        int buffer = affix;
+        int buffer = prefix;
         int[] byteBuffer = new int[8];
 
         for (int field = 3; field >= 0; --field) {
@@ -157,23 +156,23 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
-    private void setAffixFromBinary() {
+    private void setPrefixFromBinary() {
 
         boolean breakpoint = false;
         int field = 3;
         int bit = 7;
-        int affix = 0;
+        int prefix = 0;
 
         while (field >= 0 && !breakpoint) {
             while (bit >= 0 && !breakpoint) {
                 if (bytes[field].getBinaryValue()[bit] == 1)
-                    ++affix;
+                    ++prefix;
                 else
                     breakpoint = true;
                 --bit;
             }
             --field;
         }
-        this.affix = affix;
+        this.prefix = prefix;
     }
 }

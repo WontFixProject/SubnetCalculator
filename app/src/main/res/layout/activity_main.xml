@@ -590,4 +590,13 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:inputType="numberDecimal"
             android:layout_weight="0.1"/>
     </LinearLayout>
+    <EditText
+        android:id="@+id/netmaskV4_affix"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/netmaskV4Binary"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
