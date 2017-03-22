@@ -185,14 +185,14 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
             switch (type) {
                 case (0):
                     if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString())))
-                        for (int bit=0; bit<8; ++bit)
+                        for (int bit = 0; bit < 8; ++bit)
                             addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
                     else
                         addressV4DecimalField[field].setText(Integer.toString(ipv4.address.getByte(field).getDecimalValue()));
                     break;
                 case (1):
                     if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString())))
-                        for (int bit=0; bit<8; ++bit)
+                        for (int bit = 0; bit < 8; ++bit)
                             netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
                     else
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
