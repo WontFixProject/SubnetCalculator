@@ -1,4 +1,4 @@
-package xyz.wontfix.subnetcalculator;
+package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
 /**
  * Created by eneviere on 3/18/2017.
@@ -37,6 +37,7 @@ public class AddressV4 {
     }
 
     public boolean setByteByDecimal(int field, int decimalValue) {
+        System.out.println("DEBUG: address override");
         if (!isAValidDecimalValue(decimalValue))
             return false;
         if (!bytes[field].setDecimalValue(decimalValue))

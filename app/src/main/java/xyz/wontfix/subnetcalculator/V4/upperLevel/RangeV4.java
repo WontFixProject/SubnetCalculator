@@ -1,4 +1,4 @@
-package xyz.wontfix.subnetcalculator;
+package xyz.wontfix.subnetcalculator.V4.upperLevel;
 
 /**
  * Created by eneviere on 3/18/2017.

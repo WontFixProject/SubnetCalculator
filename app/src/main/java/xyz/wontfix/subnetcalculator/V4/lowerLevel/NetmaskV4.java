@@ -1,4 +1,4 @@
-package xyz.wontfix.subnetcalculator;
+package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
 /**
  * Created by eneviere on 3/18/2017.
@@ -54,6 +54,7 @@ public class NetmaskV4 extends AddressV4 {
 
     @Override
     public boolean setByteByDecimal(int field, int decimalValue) {
+        System.out.println("DEBUG: netmask override");
         if (!isAValidDecimalValue(decimalValue))
             return false;
         if (!wouldBeAValidDecimalNetmask(field, decimalValue))

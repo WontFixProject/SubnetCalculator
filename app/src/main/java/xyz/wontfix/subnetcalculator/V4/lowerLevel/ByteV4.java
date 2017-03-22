@@ -1,4 +1,4 @@
-package xyz.wontfix.subnetcalculator;
+package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
 import static java.lang.Math.pow;
 
@@ -48,7 +48,7 @@ public class ByteV4 {
         return binaryValue;
     }
 
-    public boolean setDecimalValue(int decimalValue) {
+    boolean setDecimalValue(int decimalValue) {
         if (decimalValue >= 0 && decimalValue <= 255) {
             this.decimalValue = decimalValue;
             setBinaryFromDecimal();
@@ -58,7 +58,7 @@ public class ByteV4 {
             return false;
     }
 
-    public boolean setBinaryValue(int [] binaryValue) {
+    boolean setBinaryValue(int [] binaryValue) {
         if (binaryValue != null && binaryValue.length == 8) {
             System.arraycopy(binaryValue, 0, this.binaryValue, 0, 8);
             setDecimalFromBinary();

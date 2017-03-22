@@ -1,9 +1,12 @@
-package xyz.wontfix.subnetcalculator;
+package xyz.wontfix.subnetcalculator.UI;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+
+import xyz.wontfix.subnetcalculator.V4.upperLevel.IPV4;
+import xyz.wontfix.subnetcalculator.R;
 
 
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
@@ -181,15 +184,15 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
             switch (type) {
                 case (0):
-                    ipv4.address.bytes[field].setDecimalValue(Integer.valueOf(addressV4DecimalField[field].getText().toString()));
+                    ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString()));
                     for (int bit=0; bit<8; ++bit) {
-                        addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.bytes[field].getBinaryValue()[bit]));
+                        addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
                     }
                     break;
                 case (1):
-                    ipv4.netmask.bytes[field].setDecimalValue(Integer.valueOf(netmaskV4DecimalField[field].getText().toString()));
+                    ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()));
                     for (int bit=0; bit<8; ++bit) {
-                        netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.bytes[field].getBinaryValue()[bit]));
+                        netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
                     }
                     break;
             }
