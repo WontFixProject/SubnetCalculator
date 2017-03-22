@@ -11,7 +11,6 @@ public class NetmaskV4 extends AddressV4 {
 # =========================================[ FIELDS ] ====================================== #
 ##############################################################################################
                                                 */
-
     private int affix;
 
                                                 /*
@@ -54,7 +53,6 @@ public class NetmaskV4 extends AddressV4 {
 
     @Override
     public boolean setByteByDecimal(int field, int decimalValue) {
-        System.out.println("DEBUG: netmask override");
         if (!isAValidDecimalValue(decimalValue))
             return false;
         if (!wouldBeAValidDecimalNetmask(field, decimalValue))
@@ -112,9 +110,9 @@ public class NetmaskV4 extends AddressV4 {
 
     private boolean wouldBeAValidDecimalNetmask(int field, int decimalValue) {
 
-        if (field > 0 && decimalValue != 0 && bytes[field-1].getDecimalValue() == 0)
+        if (field > 0 && decimalValue == 0 && bytes[field-1].getDecimalValue() != 0)
             return false;
-        if (field < 3 && decimalValue == 0 && bytes[field+1].getDecimalValue() != 0)
+        if (field < 3 && decimalValue != 0 && bytes[field+1].getDecimalValue() == 0)
             return false;
         return true;
     }
