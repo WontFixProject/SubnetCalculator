@@ -117,6 +117,7 @@ public class NetmaskV4 extends AddressV4 {
         return true;
     }
 
+    //LOGIC IS FLAWED - NEED RE-WRITE
     private boolean wouldBeAValidBinaryNetmask(int field, int[] binaryValue) {
         if (field > 0 && binaryValue[0] == 0 && bytes[field-1].getBinaryValue()[7] != 0)
             return false;
