@@ -16,6 +16,7 @@ public class NetmaskV4 {
         fields[3] = new ByteV4();
     }
 
+    //NEED TO BE CHECKED
     public boolean isAValidBinaryNetmask() {
 
         boolean isValid = true;
@@ -34,6 +35,28 @@ public class NetmaskV4 {
                 --bit;
             }
             --field;
+        }
+        return isValid;
+    }
+
+    //NEED TO BE CHECKED
+    public boolean isAValidDecimalNetmask() {
+
+        boolean isValid = true;
+        boolean validValueFound;
+        int field = 3;
+        int index;
+        int[] validValues = new int[] {255, 254, 252, 248, 240, 224, 192, 128, 0};
+
+        while (field >= 0 && isValid) {
+            validValueFound = false;
+            index = 0;
+
+            while (index < validValues.length && !validValueFound) {
+                if (fields[field].decimalValue == validValues[index]) validValueFound = true;
+            }
+            if (!validValueFound) isValid = false;
+            else --field;
         }
         return isValid;
     }
