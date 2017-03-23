@@ -15,6 +15,10 @@
 
 package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
+/*
+ * This class is a subclass of AddressV4 with an additional field (prefix) and additional methods
+ * to securely manipulate this new field. This class add additional restrictions on user input.
+ */
 public class NetmaskV4 extends AddressV4 {
 
 
@@ -22,7 +26,7 @@ public class NetmaskV4 extends AddressV4 {
     // =========================================[ FIELDS ] ====================================== //
     //############################################################################################//
 
-    private int prefix;
+    private int prefix; //netmask prefix
 
 
     //############################################################################################//
@@ -44,10 +48,20 @@ public class NetmaskV4 extends AddressV4 {
     // ======================================[ GETORS/SETORS ] ================================== //
     //############################################################################################//
 
+    /**
+     * Return the netmask prefix.
+     * @return the prefix value.
+     */
     public int getPrefix() {
-        return this.prefix;
+        return prefix;
     }
 
+    /**
+     * Set the netmask prefix if the value is valid.
+     * Binary values will be updated, which in turn will update the decimal values of the bytes array.
+     * @param prefix is the new value for the netmask prefix.
+     * @return true if the prefix is valid. False otherwise.
+     */
     public boolean setPrefix(int prefix) {
         if (prefix >= 0 && prefix <= 32) {
             this.prefix = prefix;
@@ -59,11 +73,15 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
-
-    //############################################################################################//
-    // ======================================[ PUBLIC METHODS ] ================================= //
-    //############################################################################################//
-
+    /**
+     * Set the value of one byte with a decimal value.
+     * This method check if the input is valid beforehand
+     * and return whether the operation has been successful or not.
+     * Override its superclass because additional checks are preformed.
+     * @param field provides the array position of the desired byte to be set.
+     * @param decimalValue provides the decimal value for the byte to set.
+     * @return true if the input is valid and the operation has been successful. False otherwise.
+     */
     @Override
     public boolean setByteByDecimal(int field, int decimalValue) {
         if (!isAValidDecimalValue(decimalValue))                return false;
@@ -73,6 +91,15 @@ public class NetmaskV4 extends AddressV4 {
         return true;
     }
 
+    /**
+     * Set the value of one byte with a binary value.
+     * This method check if the input is valid beforehand
+     * and return whether the operation has been successful or not.
+     * Override its superclass because additional checks are preformed.
+     * @param field provides the array position of the desired byte to be set.
+     * @param binaryValue provides the binary value for the byte to set.
+     * @return true if the input is valid and the operation has been successful. False otherwise.
+     */
     @Override
     public boolean setByteByBinary(int field, int[] binaryValue) {
         if (!isAValidBinaryValue(binaryValue))                  return false;
@@ -87,8 +114,13 @@ public class NetmaskV4 extends AddressV4 {
     // =====================================[ PRIVATE METHODS ] ================================= //
     //############################################################################################//
 
+    /**
+     * Check if the given decimal value is a valid candidate for a netmask.
+     * The method compares the parameter against a valid number list.
+     * @param decimalValue provides the binary value for the byte to set.
+     * @return true if the decimal value is valid for a netmask address . False otherwise.
+     */
     private boolean isAValidDecimalValue(int decimalValue) {
-
         boolean isValid = false;
         int[] validValues = new int[] {255, 254, 252, 248, 240, 224, 192, 128, 0};
 
@@ -100,8 +132,13 @@ public class NetmaskV4 extends AddressV4 {
         return isValid;
     }
 
+    /**
+     * Check if the given binary value is a valid candidate for a netmask.
+     * The method iterate through bits from left to right, once a 0 is found no 1 should be seen.
+     * @param binaryValue provides the binary value for the byte to set.
+     * @return true if the binary value is valid for a netmask address . False otherwise.
+     */
     private boolean isAValidBinaryValue(int[] binaryValue) {
-
         boolean isValid = true;
         boolean breakpoint = false;
         int bit = 7;
@@ -118,6 +155,12 @@ public class NetmaskV4 extends AddressV4 {
         return isValid;
     }
 
+    /**
+     * Check if the given decimal value for a specific bytes would result in a valid netmask address.
+     * @param field provides the array position of the desired byte to be set.
+     * @param decimalValue provides the binary value for the byte to set.
+     * @return true if the decimal value is valid for a netmask address . False otherwise.
+     */
     private boolean wouldBeAValidDecimalNetmask(int field, int decimalValue) {
         switch (field) {
             case 0:
@@ -155,7 +198,6 @@ public class NetmaskV4 extends AddressV4 {
     }
 
     private void setBinaryFromPrefix() {
-
         int buffer = prefix;
         int[] byteBuffer = new int[8];
 
@@ -174,7 +216,6 @@ public class NetmaskV4 extends AddressV4 {
     }
 
     private void setPrefixFromBinary() {
-
         boolean breakpoint = false;
         int field = 3;
         int bit;
