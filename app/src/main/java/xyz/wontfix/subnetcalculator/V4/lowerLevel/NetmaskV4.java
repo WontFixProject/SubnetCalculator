@@ -17,31 +17,33 @@ package xyz.wontfix.subnetcalculator.V4.lowerLevel;
 
 public class NetmaskV4 extends AddressV4 {
 
-                                                /*
-##############################################################################################
-# =========================================[ FIELDS ] ====================================== #
-##############################################################################################
-                                                */
+
+    //############################################################################################//
+    // =========================================[ FIELDS ] ====================================== //
+    //############################################################################################//
+
     private int prefix;
 
-                                                /*
-##############################################################################################
-# ======================================[ CONSTRUCTORS ] =================================== #
-##############################################################################################
-                                                */
+
+    //############################################################################################//
+    // ======================================[ CONSTRUCTORS ] =================================== //
+    //############################################################################################//
+
     public NetmaskV4 () {
-        bytes = new ByteV4[4];
-        bytes[0] = new ByteV4();
-        bytes[1] = new ByteV4();
-        bytes[2] = new ByteV4();
-        bytes[3] = new ByteV4();
+        super();
+        prefix = 0;
     }
 
-                                                /*
-##############################################################################################
-# ======================================[ GETORS/SETORS ] ================================== #
-##############################################################################################
-                                                */
+    public NetmaskV4 (int prefix) {
+        super();
+        this.prefix = prefix;
+    }
+
+
+    //############################################################################################//
+    // ======================================[ GETORS/SETORS ] ================================== //
+    //############################################################################################//
+
     public int getPrefix() {
         return this.prefix;
     }
@@ -52,53 +54,48 @@ public class NetmaskV4 extends AddressV4 {
             setBinaryFromPrefix();
             return true;
         }
-        else
+        else {
             return false;
+        }
     }
 
-                                                /*
-##############################################################################################
-# ======================================[ PUBLIC METHODS ] ================================= #
-##############################################################################################
-                                                */
+
+    //############################################################################################//
+    // ======================================[ PUBLIC METHODS ] ================================= //
+    //############################################################################################//
 
     @Override
     public boolean setByteByDecimal(int field, int decimalValue) {
-        if (!isAValidDecimalValue(decimalValue))
-            return false;
-        if (!wouldBeAValidDecimalNetmask(field, decimalValue))
-            return false;
-        if (!bytes[field].setDecimalValue(decimalValue))
-            return false;
+        if (!isAValidDecimalValue(decimalValue))                return false;
+        if (!wouldBeAValidDecimalNetmask(field, decimalValue))  return false;
+        if (!bytes[field].setDecimalValue(decimalValue))        return false;
         setPrefixFromBinary();
         return true;
     }
 
     @Override
     public boolean setByteByBinary(int field, int[] binaryValue) {
-        if (!isAValidBinaryValue(binaryValue))
-            return false;
-        if(!wouldBeAValidBinaryNetmask(field, binaryValue))
-            return false;
-        if (!bytes[field].setBinaryValue(binaryValue))
-            return false;
+        if (!isAValidBinaryValue(binaryValue))                  return false;
+        if (!wouldBeAValidBinaryNetmask(field, binaryValue))    return false;
+        if (!bytes[field].setBinaryValue(binaryValue))          return false;
         setPrefixFromBinary();
         return true;
     }
 
-                                                /*
-##############################################################################################
-# =====================================[ PRIVATE METHODS ] ================================= #
-##############################################################################################
-                                                */
+
+    //############################################################################################//
+    // =====================================[ PRIVATE METHODS ] ================================= //
+    //############################################################################################//
+
     private boolean isAValidDecimalValue(int decimalValue) {
 
         boolean isValid = false;
         int[] validValues = new int[] {255, 254, 252, 248, 240, 224, 192, 128, 0};
 
         for (int value:validValues) {
-            if (value == decimalValue)
+            if (value == decimalValue) {
                 isValid = true;
+            }
         }
         return isValid;
     }
@@ -110,10 +107,12 @@ public class NetmaskV4 extends AddressV4 {
         int bit = 7;
 
         while (bit >= 0 && isValid) {
-            if (binaryValue[bit] == 0 && !breakpoint)
+            if (binaryValue[bit] == 0 && !breakpoint) {
                 breakpoint = true;
-            else if (binaryValue[bit] == 1 && breakpoint)
+            }
+            else if (binaryValue[bit] == 1 && breakpoint) {
                 isValid = false;
+            }
             --bit;
         }
         return isValid;
@@ -134,9 +133,11 @@ public class NetmaskV4 extends AddressV4 {
 
     private int binaryContent(int[] binaryValue) {
         int content = binaryValue[0];
-        for (int bit = 1; bit < binaryValue.length; ++bit)
-            if (binaryValue[bit] != content)
+        for (int bit = 1; bit < binaryValue.length; ++bit) {
+            if (binaryValue[bit] != content) {
                 return -1;
+            }
+        }
         return content;
     }
 
@@ -160,15 +161,14 @@ public class NetmaskV4 extends AddressV4 {
 
         for (int field = 3; field >= 0; --field) {
             for (int bit = 7; bit >= 0; --bit) {
-                System.out.println("DEBUG: FIELD: " + field + " BIT: " + bit);
                 if (buffer > 0) {
                     byteBuffer[bit] = 1;
                     --buffer;
                 }
-                else
+                else {
                     byteBuffer[bit] = 0;
+                }
             }
-            System.out.println("DEBUG: OMGOMG");
             bytes[field].setBinaryValue(byteBuffer);
         }
     }
@@ -183,10 +183,12 @@ public class NetmaskV4 extends AddressV4 {
         while (field >= 0 && !breakpoint) {
             bit = 7;
             while (bit >= 0 && !breakpoint) {
-                if (bytes[field].getBinaryValue()[bit] == 1)
+                if (bytes[field].getBinaryValue()[bit] == 1) {
                     ++prefix;
-                else
+                }
+                else {
                     breakpoint = true;
+                }
                 --bit;
             }
             --field;
