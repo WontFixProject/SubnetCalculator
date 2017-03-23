@@ -145,6 +145,7 @@ public class NetmaskV4 extends AddressV4 {
 
         for (int field = 3; field >= 0; --field) {
             for (int bit = 7; bit >= 0; --bit) {
+                System.out.println("DEBUG: FIELD: " + field + " BIT: " + bit);
                 if (buffer > 0) {
                     byteBuffer[bit] = 1;
                     --buffer;
@@ -152,6 +153,7 @@ public class NetmaskV4 extends AddressV4 {
                 else
                     byteBuffer[bit] = 0;
             }
+            System.out.println("DEBUG: OMGOMG");
             bytes[field].setBinaryValue(byteBuffer);
         }
     }

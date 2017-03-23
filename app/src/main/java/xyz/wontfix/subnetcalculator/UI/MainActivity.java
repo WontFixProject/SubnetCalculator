@@ -208,13 +208,20 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
                     break;
                 case 2:
-                    if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
-                        for (int bit = 0; bit < 8; ++bit)
-                            netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
-                        netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
+                    try {
+                        if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
+                            for (int localField = 0; localField < 4; ++localField) {
+                                for (int bit = 0; bit < 8; ++bit)
+                                    netmaskV4BinaryField[localField][bit].setText(Integer.toString(ipv4.netmask.getByte(localField).getBinaryValue()[bit]));
+                                netmaskV4DecimalField[localField].setText(Integer.toString(ipv4.netmask.getByte(localField).getDecimalValue()));
+                            }
+
+                        } else
+                            netmaskV4Prefix.setText(Integer.toString(ipv4.netmask.getPrefix()));
                     }
-                    else
-                        netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
             }
         }
