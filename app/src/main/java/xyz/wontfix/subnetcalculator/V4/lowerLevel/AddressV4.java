@@ -42,6 +42,14 @@ public class AddressV4 {
         bytes[3] = new ByteV4();    //Left byte
     }
 
+    public AddressV4 (AddressV4 addressV4) {
+        bytes = new ByteV4[4];
+        bytes[0] = new ByteV4(addressV4.getByte(0).getDecimalValue());
+        bytes[1] = new ByteV4(addressV4.getByte(1).getDecimalValue());
+        bytes[2] = new ByteV4(addressV4.getByte(2).getDecimalValue());
+        bytes[3] = new ByteV4(addressV4.getByte(3).getDecimalValue());
+    }
+
 
     //############################################################################################//
     // ======================================[ GETORS/SETORS ] ================================== //
