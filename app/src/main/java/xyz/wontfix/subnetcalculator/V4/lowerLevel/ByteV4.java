@@ -20,7 +20,6 @@ import static java.lang.Math.pow;
 /*
  * This class represents bytes (fields) used by IPv4 addresses and netmasks.
  */
-
 public class ByteV4 {
 
 
@@ -28,8 +27,8 @@ public class ByteV4 {
     // =========================================[ FIELDS ] ====================================== #
     //#############################################################################################
 
-    private int decimalValue;
-    private int[] binaryValue;
+    private int decimalValue;   //decimal value of this field/byte
+    private int[] binaryValue;  //binary value of this field/byte
 
 
     //#############################################################################################
@@ -55,14 +54,26 @@ public class ByteV4 {
     // ======================================[ GETORS/SETORS ] ================================== #
     //#############################################################################################
 
+    /**
+     * Return the decimal value of this field/byte.
+     * @return the decimal value.
+     */
     public int getDecimalValue() {
         return decimalValue;
     }
 
+    /**
+     * Return the binary value of this field/byte.
+     * @return the binary value.
+     */
     public int[] getBinaryValue() {
         return binaryValue;
     }
 
+    /**
+     * Set the decimal value of this field/byte. Then set the binary value from the decimal value.
+     * @return true if the decimal value is valid and has been set. False otherwise.
+     */
     boolean setDecimalValue(int decimalValue) {
         if (decimalValue >= 0 && decimalValue <= 255) {
             this.decimalValue = decimalValue;
@@ -73,6 +84,10 @@ public class ByteV4 {
             return false;
     }
 
+    /**
+     * Set the binary value of this field/byte. Then set the decimal value from the binary value.
+     * @return true if the binary value is valid and has been set. False otherwise.
+     */
     boolean setBinaryValue(int [] binaryValue) {
         if (binaryValue != null && binaryValue.length == 8) {
             System.arraycopy(binaryValue, 0, this.binaryValue, 0, 8);
@@ -88,7 +103,9 @@ public class ByteV4 {
     // =====================================[ PRIVATE METHODS ] ================================= #
     //#############################################################################################
 
-    //Compute and set binaryValue from decimalValue
+    /**
+     * Compute and set the binary value from the decimal value.
+     */
     private void setBinaryFromDecimal() {
         int buffer = decimalValue;
         int power = 7;
@@ -108,7 +125,9 @@ public class ByteV4 {
         }
     }
 
-    //Compute and set decimalValue from binaryValue
+    /**
+     * Compute and set the decimal value from the binary value.
+     */
     private void setDecimalFromBinary() {
 
         int decimalValue = 0;
