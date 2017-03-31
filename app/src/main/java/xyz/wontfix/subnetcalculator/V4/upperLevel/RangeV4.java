@@ -65,14 +65,14 @@ public class RangeV4 {
     /**
      * @return the first address of this range.
      */
-    AddressV4 getFirstAddress() {
+    public AddressV4 getFirstAddress() {
         return firstAddress;
     }
 
     /**
      * @return the last address of this range.
      */
-    AddressV4 getLastAddress() {
+    public AddressV4 getLastAddress() {
         return lastAddress;
     }
 

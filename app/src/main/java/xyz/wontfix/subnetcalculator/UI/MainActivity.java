@@ -19,9 +19,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import xyz.wontfix.subnetcalculator.V4.upperLevel.IPV4;
 import xyz.wontfix.subnetcalculator.R;
+import xyz.wontfix.subnetcalculator.V4.upperLevel.RangeV4;
 
 
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
@@ -33,13 +35,16 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
     private EditText[] addressV4DecimalField;
     private EditText[][] addressV4BinaryField;
-
     private EditText[] netmaskV4DecimalField;
     private EditText[][] netmaskV4BinaryField;
-
     private EditText netmaskV4Prefix;
+    private TextView[] firstAddressV4DecimalField;
+    private TextView[][] firstAddressV4BinaryField;
+    private TextView[] lastAddressV4DecimalField;
+    private TextView[][] lastAddressV4BinaryField;
 
     public IPV4 ipv4;
+    public RangeV4 rangev4;
 
 
     //#############################################################################################
@@ -55,13 +60,20 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
          * Objects and arrays instantiating
          */
         ipv4 = new IPV4();
+        rangev4 = new RangeV4(ipv4);
 
         addressV4DecimalField = new EditText[4];
         netmaskV4DecimalField = new EditText[4];
 
         addressV4BinaryField = new EditText[4][8];
         netmaskV4BinaryField = new EditText[4][8];
+        
+        firstAddressV4DecimalField  = new TextView[4];
+        lastAddressV4DecimalField   = new TextView[4];
 
+        firstAddressV4BinaryField  = new TextView[4][8];
+        lastAddressV4BinaryField   = new TextView[4][8];
+        
         /*
          * Bind XML UI elements to java variables *
          */
@@ -151,6 +163,90 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
         netmaskV4Prefix = (EditText) findViewById(R.id.netmaskV4_prefix);
 
+        firstAddressV4DecimalField[0] = (TextView) findViewById(R.id.first_addressV4_decimal_field0);
+        firstAddressV4DecimalField[1] = (TextView) findViewById(R.id.first_addressV4_decimal_field1);
+        firstAddressV4DecimalField[2] = (TextView) findViewById(R.id.first_addressV4_decimal_field2);
+        firstAddressV4DecimalField[3] = (TextView) findViewById(R.id.first_addressV4_decimal_field3);
+
+        firstAddressV4BinaryField[0][0] = (TextView) findViewById(R.id.first_addressV4_binary_field00);
+        firstAddressV4BinaryField[0][1] = (TextView) findViewById(R.id.first_addressV4_binary_field01);
+        firstAddressV4BinaryField[0][2] = (TextView) findViewById(R.id.first_addressV4_binary_field02);
+        firstAddressV4BinaryField[0][3] = (TextView) findViewById(R.id.first_addressV4_binary_field03);
+        firstAddressV4BinaryField[0][4] = (TextView) findViewById(R.id.first_addressV4_binary_field04);
+        firstAddressV4BinaryField[0][5] = (TextView) findViewById(R.id.first_addressV4_binary_field05);
+        firstAddressV4BinaryField[0][6] = (TextView) findViewById(R.id.first_addressV4_binary_field06);
+        firstAddressV4BinaryField[0][7] = (TextView) findViewById(R.id.first_addressV4_binary_field07);
+        firstAddressV4BinaryField[0][0] = (TextView) findViewById(R.id.first_addressV4_binary_field00);
+
+        firstAddressV4BinaryField[1][0] = (TextView) findViewById(R.id.first_addressV4_binary_field10);
+        firstAddressV4BinaryField[1][1] = (TextView) findViewById(R.id.first_addressV4_binary_field11);
+        firstAddressV4BinaryField[1][2] = (TextView) findViewById(R.id.first_addressV4_binary_field12);
+        firstAddressV4BinaryField[1][3] = (TextView) findViewById(R.id.first_addressV4_binary_field13);
+        firstAddressV4BinaryField[1][4] = (TextView) findViewById(R.id.first_addressV4_binary_field14);
+        firstAddressV4BinaryField[1][5] = (TextView) findViewById(R.id.first_addressV4_binary_field15);
+        firstAddressV4BinaryField[1][6] = (TextView) findViewById(R.id.first_addressV4_binary_field16);
+        firstAddressV4BinaryField[1][7] = (TextView) findViewById(R.id.first_addressV4_binary_field17);
+
+        firstAddressV4BinaryField[2][0] = (TextView) findViewById(R.id.first_addressV4_binary_field20);
+        firstAddressV4BinaryField[2][1] = (TextView) findViewById(R.id.first_addressV4_binary_field21);
+        firstAddressV4BinaryField[2][2] = (TextView) findViewById(R.id.first_addressV4_binary_field22);
+        firstAddressV4BinaryField[2][3] = (TextView) findViewById(R.id.first_addressV4_binary_field23);
+        firstAddressV4BinaryField[2][4] = (TextView) findViewById(R.id.first_addressV4_binary_field24);
+        firstAddressV4BinaryField[2][5] = (TextView) findViewById(R.id.first_addressV4_binary_field25);
+        firstAddressV4BinaryField[2][6] = (TextView) findViewById(R.id.first_addressV4_binary_field26);
+        firstAddressV4BinaryField[2][7] = (TextView) findViewById(R.id.first_addressV4_binary_field27);
+
+        firstAddressV4BinaryField[3][0] = (TextView) findViewById(R.id.first_addressV4_binary_field30);
+        firstAddressV4BinaryField[3][1] = (TextView) findViewById(R.id.first_addressV4_binary_field31);
+        firstAddressV4BinaryField[3][2] = (TextView) findViewById(R.id.first_addressV4_binary_field32);
+        firstAddressV4BinaryField[3][3] = (TextView) findViewById(R.id.first_addressV4_binary_field33);
+        firstAddressV4BinaryField[3][4] = (TextView) findViewById(R.id.first_addressV4_binary_field34);
+        firstAddressV4BinaryField[3][5] = (TextView) findViewById(R.id.first_addressV4_binary_field35);
+        firstAddressV4BinaryField[3][6] = (TextView) findViewById(R.id.first_addressV4_binary_field36);
+        firstAddressV4BinaryField[3][7] = (TextView) findViewById(R.id.first_addressV4_binary_field37);
+
+        lastAddressV4DecimalField[0] = (TextView) findViewById(R.id.last_addressV4_decimal_field0);
+        lastAddressV4DecimalField[1] = (TextView) findViewById(R.id.last_addressV4_decimal_field1);
+        lastAddressV4DecimalField[2] = (TextView) findViewById(R.id.last_addressV4_decimal_field2);
+        lastAddressV4DecimalField[3] = (TextView) findViewById(R.id.last_addressV4_decimal_field3);
+
+        lastAddressV4BinaryField[0][0] = (TextView) findViewById(R.id.last_addressV4_binary_field00);
+        lastAddressV4BinaryField[0][1] = (TextView) findViewById(R.id.last_addressV4_binary_field01);
+        lastAddressV4BinaryField[0][2] = (TextView) findViewById(R.id.last_addressV4_binary_field02);
+        lastAddressV4BinaryField[0][3] = (TextView) findViewById(R.id.last_addressV4_binary_field03);
+        lastAddressV4BinaryField[0][4] = (TextView) findViewById(R.id.last_addressV4_binary_field04);
+        lastAddressV4BinaryField[0][5] = (TextView) findViewById(R.id.last_addressV4_binary_field05);
+        lastAddressV4BinaryField[0][6] = (TextView) findViewById(R.id.last_addressV4_binary_field06);
+        lastAddressV4BinaryField[0][7] = (TextView) findViewById(R.id.last_addressV4_binary_field07);
+        lastAddressV4BinaryField[0][0] = (TextView) findViewById(R.id.last_addressV4_binary_field00);
+
+        lastAddressV4BinaryField[1][0] = (TextView) findViewById(R.id.last_addressV4_binary_field10);
+        lastAddressV4BinaryField[1][1] = (TextView) findViewById(R.id.last_addressV4_binary_field11);
+        lastAddressV4BinaryField[1][2] = (TextView) findViewById(R.id.last_addressV4_binary_field12);
+        lastAddressV4BinaryField[1][3] = (TextView) findViewById(R.id.last_addressV4_binary_field13);
+        lastAddressV4BinaryField[1][4] = (TextView) findViewById(R.id.last_addressV4_binary_field14);
+        lastAddressV4BinaryField[1][5] = (TextView) findViewById(R.id.last_addressV4_binary_field15);
+        lastAddressV4BinaryField[1][6] = (TextView) findViewById(R.id.last_addressV4_binary_field16);
+        lastAddressV4BinaryField[1][7] = (TextView) findViewById(R.id.last_addressV4_binary_field17);
+
+        lastAddressV4BinaryField[2][0] = (TextView) findViewById(R.id.last_addressV4_binary_field20);
+        lastAddressV4BinaryField[2][1] = (TextView) findViewById(R.id.last_addressV4_binary_field21);
+        lastAddressV4BinaryField[2][2] = (TextView) findViewById(R.id.last_addressV4_binary_field22);
+        lastAddressV4BinaryField[2][3] = (TextView) findViewById(R.id.last_addressV4_binary_field23);
+        lastAddressV4BinaryField[2][4] = (TextView) findViewById(R.id.last_addressV4_binary_field24);
+        lastAddressV4BinaryField[2][5] = (TextView) findViewById(R.id.last_addressV4_binary_field25);
+        lastAddressV4BinaryField[2][6] = (TextView) findViewById(R.id.last_addressV4_binary_field26);
+        lastAddressV4BinaryField[2][7] = (TextView) findViewById(R.id.last_addressV4_binary_field27);
+
+        lastAddressV4BinaryField[3][0] = (TextView) findViewById(R.id.last_addressV4_binary_field30);
+        lastAddressV4BinaryField[3][1] = (TextView) findViewById(R.id.last_addressV4_binary_field31);
+        lastAddressV4BinaryField[3][2] = (TextView) findViewById(R.id.last_addressV4_binary_field32);
+        lastAddressV4BinaryField[3][3] = (TextView) findViewById(R.id.last_addressV4_binary_field33);
+        lastAddressV4BinaryField[3][4] = (TextView) findViewById(R.id.last_addressV4_binary_field34);
+        lastAddressV4BinaryField[3][5] = (TextView) findViewById(R.id.last_addressV4_binary_field35);
+        lastAddressV4BinaryField[3][6] = (TextView) findViewById(R.id.last_addressV4_binary_field36);
+        lastAddressV4BinaryField[3][7] = (TextView) findViewById(R.id.last_addressV4_binary_field37);
+
         /*
          * Set event listeners for UI element
          */
@@ -181,9 +277,25 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
     }
 
 
-    //#############################################################################################
-    // ======================================[ UI LISTENERS ] =================================== #
-    //#############################################################################################
+    //############################################################################################//
+    // =====================================[ PRIVATE METHODS ] ================================= //
+    //############################################################################################//
+
+    private void updateRange() {
+        rangev4.setRangeFromIPV4(ipv4);
+        for (int field = 0; field < 4; ++field) {
+            firstAddressV4DecimalField[field].setText(Integer.toString(rangev4.getFirstAddress().getByte(field).getDecimalValue()));
+            lastAddressV4DecimalField[field].setText(Integer.toString(rangev4.getLastAddress().getByte(field).getDecimalValue()));
+            for (int bit = 0; bit < 8; ++bit) {
+                firstAddressV4BinaryField[field][bit].setText(Integer.toString(rangev4.getFirstAddress().getByte(field).getBinaryValue()[bit]));
+                lastAddressV4BinaryField[field][bit].setText(Integer.toString(rangev4.getLastAddress().getByte(field).getBinaryValue()[bit]));
+            }
+        }
+    }
+
+    //############################################################################################//
+    // ======================================[ UI LISTENERS ] =================================== //
+    //############################################################################################//
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
@@ -205,18 +317,24 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
             switch (type) {
                 //An address field has been changed
                 case 0:
-                    if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString())))
-                        for (int bit = 0; bit < 8; ++bit)
+                    if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString()))) {
+                        for (int bit = 0; bit < 8; ++bit) {
                             addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
-                    else
+                        }
+                        updateRange();
+                    }
+                    else {
                         addressV4DecimalField[field].setText(Integer.toString(ipv4.address.getByte(field).getDecimalValue()));
+                    }
                     break;
                 //An netmask field has been changed
                 case 1:
                     if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()))) {
-                        for (int bit = 0; bit < 8; ++bit)
+                        for (int bit = 0; bit < 8; ++bit) {
                             netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
+                        }
                         netmaskV4Prefix.setText(Integer.toString(ipv4.netmask.getPrefix()));
+                        updateRange();
                     }
                     else
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
@@ -226,13 +344,17 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     try {
                         if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
                             for (int localField = 0; localField < 4; ++localField) {
-                                for (int bit = 0; bit < 8; ++bit)
+                                for (int bit = 0; bit < 8; ++bit) {
                                     netmaskV4BinaryField[localField][bit].setText(Integer.toString(ipv4.netmask.getByte(localField).getBinaryValue()[bit]));
+                                }
                                 netmaskV4DecimalField[localField].setText(Integer.toString(ipv4.netmask.getByte(localField).getDecimalValue()));
                             }
+                            updateRange();
 
-                        } else
+                        }
+                        else {
                             netmaskV4Prefix.setText(Integer.toString(ipv4.netmask.getPrefix()));
+                        }
                     }
                     catch (Exception e) {
                         e.printStackTrace();
