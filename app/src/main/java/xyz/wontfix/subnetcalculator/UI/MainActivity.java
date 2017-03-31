@@ -26,11 +26,11 @@ import xyz.wontfix.subnetcalculator.R;
 
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
 
-                                                    /*
-    ##############################################################################################
-    # =====================================[ PRIVATE FIELDS ]=================================== #
-    ##############################################################################################
-                                                    */
+
+    //#############################################################################################
+    // =====================================[ PRIVATE FIELDS ]=================================== #
+    //#############################################################################################
+
     private EditText[] addressV4DecimalField;
     private EditText[][] addressV4BinaryField;
 
@@ -41,19 +41,19 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
     public IPV4 ipv4;
 
-                                                    /*
-    ##############################################################################################
-    # ================================[ ACTIVITY STATE METHODS ]================================ #
-    ##############################################################################################
-                                                    */
+
+    //#############################################################################################
+    // ================================[ ACTIVITY STATE METHODS ]================================ #
+    //#############################################################################################
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /************************************
-         * Objects and arrays instantiating *
-         ************************************/
+        /*
+         * Objects and arrays instantiating
+         */
         ipv4 = new IPV4();
 
         addressV4DecimalField = new EditText[4];
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         addressV4BinaryField = new EditText[4][8];
         netmaskV4BinaryField = new EditText[4][8];
 
-        /*******************************************
-         *  Bind XML UI elements to java variables *
-         *******************************************/
+        /*
+         * Bind XML UI elements to java variables *
+         */
         addressV4DecimalField[0] = (EditText) findViewById(R.id.addressV4_decimal_field0);
         addressV4DecimalField[1] = (EditText) findViewById(R.id.addressV4_decimal_field1);
         addressV4DecimalField[2] = (EditText) findViewById(R.id.addressV4_decimal_field2);
@@ -151,24 +151,24 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
 
         netmaskV4Prefix = (EditText) findViewById(R.id.netmaskV4_prefix);
 
-        /***************************************
-         *  Set event listeners for UI element *
-         ***************************************/
-        addressV4DecimalField[0].setOnFocusChangeListener(this);
-        addressV4DecimalField[1].setOnFocusChangeListener(this);
-        addressV4DecimalField[2].setOnFocusChangeListener(this);
-        addressV4DecimalField[3].setOnFocusChangeListener(this);
+        /*
+         * Set event listeners for UI element
+         */
+        addressV4DecimalField[0].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        addressV4DecimalField[1].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        addressV4DecimalField[2].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        addressV4DecimalField[3].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
 
-        netmaskV4DecimalField[0].setOnFocusChangeListener(this);
-        netmaskV4DecimalField[1].setOnFocusChangeListener(this);
-        netmaskV4DecimalField[2].setOnFocusChangeListener(this);
-        netmaskV4DecimalField[3].setOnFocusChangeListener(this);
+        netmaskV4DecimalField[0].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        netmaskV4DecimalField[1].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        netmaskV4DecimalField[2].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
+        netmaskV4DecimalField[3].setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
 
-        netmaskV4Prefix.setOnFocusChangeListener(this);
+        netmaskV4Prefix.setOnFocusChangeListener(this); //TODO: Switch to a better event listener (on value change?)
 
-        /****************************
-         *  Force binary UI refresh *
-         ****************************/
+        /*
+         * Force binary UI refresh
+         */
         onFocusChange(addressV4DecimalField[0], false);
         onFocusChange(addressV4DecimalField[1], false);
         onFocusChange(addressV4DecimalField[2], false);
@@ -180,11 +180,11 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         onFocusChange(netmaskV4DecimalField[3], false);
     }
 
-                                                    /*
-    ##############################################################################################
-    # ======================================[ UI LISTENERS ] =================================== #
-    ##############################################################################################
-                                                    */
+
+    //#############################################################################################
+    // ======================================[ UI LISTENERS ] =================================== #
+    //#############################################################################################
+
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
 
@@ -192,20 +192,18 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         int type = -1;
 
         if (!hasFocus) {
-
-            //type 0: address update, type 1: netmask update, type 2: netmask prefix update, field: which field to update
-            if (v == addressV4DecimalField[0]) {type = 0; field = 0;}
-            if (v == addressV4DecimalField[1]) {type = 0; field = 1;}
-            if (v == addressV4DecimalField[2]) {type = 0; field = 2;}
-            if (v == addressV4DecimalField[3]) {type = 0; field = 3;}
-            if (v == netmaskV4DecimalField[0]) {type = 1; field = 0;}
-            if (v == netmaskV4DecimalField[1]) {type = 1; field = 1;}
-            if (v == netmaskV4DecimalField[2]) {type = 1; field = 2;}
-            if (v == netmaskV4DecimalField[3]) {type = 1; field = 3;}
-            if (v == netmaskV4Prefix)
-                type = 2;
+            if (v == addressV4DecimalField[0])  {type = 0; field = 0;}  //Address field 0
+            if (v == addressV4DecimalField[1])  {type = 0; field = 1;}  //Address field 1
+            if (v == addressV4DecimalField[2])  {type = 0; field = 2;}  //Address field 2
+            if (v == addressV4DecimalField[3])  {type = 0; field = 3;}  //Address field 3
+            if (v == netmaskV4DecimalField[0])  {type = 1; field = 0;}  //Netmask field 0
+            if (v == netmaskV4DecimalField[1])  {type = 1; field = 1;}  //Netmask field 1
+            if (v == netmaskV4DecimalField[2])  {type = 1; field = 2;}  //Netmask field 2
+            if (v == netmaskV4DecimalField[3])  {type = 1; field = 3;}  //Netmask field 3
+            if (v == netmaskV4Prefix)           {type = 2;}             //Netmask prefix
 
             switch (type) {
+                //An address field has been changed
                 case 0:
                     if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString())))
                         for (int bit = 0; bit < 8; ++bit)
@@ -213,6 +211,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     else
                         addressV4DecimalField[field].setText(Integer.toString(ipv4.address.getByte(field).getDecimalValue()));
                     break;
+                //An netmask field has been changed
                 case 1:
                     if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()))) {
                         for (int bit = 0; bit < 8; ++bit)
@@ -222,6 +221,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     else
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
                     break;
+                //The netmask prefix has been changed
                 case 2:
                     try {
                         if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
@@ -237,8 +237,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     catch (Exception e) {
                         e.printStackTrace();
                     }
-
-            }
+                }
         }
     }
 }
