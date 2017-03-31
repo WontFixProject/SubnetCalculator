@@ -117,7 +117,7 @@ public class NetmaskV4 extends AddressV4 {
     /**
      * Check if the given decimal value is a valid candidate for a netmask.
      * The method compares the parameter against a valid number list.
-     * @param decimalValue provides the binary value for the byte to set.
+     * @param decimalValue provides the decimal value for the byte to setto be checked.
      * @return true if the decimal value is valid for a netmask address . False otherwise.
      */
     private boolean isAValidDecimalValue(int decimalValue) {
@@ -135,7 +135,7 @@ public class NetmaskV4 extends AddressV4 {
     /**
      * Check if the given binary value is a valid candidate for a netmask.
      * The method iterate through bits from left to right, once a 0 is found no 1 should be seen.
-     * @param binaryValue provides the binary value for the byte to set.
+     * @param binaryValue provides the binary value to be checked.
      * @return true if the binary value is valid for a netmask address . False otherwise.
      */
     private boolean isAValidBinaryValue(int[] binaryValue) {
@@ -157,8 +157,8 @@ public class NetmaskV4 extends AddressV4 {
 
     /**
      * Check if the given decimal value for a specific bytes would result in a valid netmask address.
-     * @param field provides the array position of the desired byte to be set.
-     * @param decimalValue provides the binary value for the byte to set.
+     * @param field provides the array position of new decimal value.
+     * @param decimalValue is the new decimal value.
      * @return true if the decimal value is valid for a netmask address . False otherwise.
      */
     private boolean wouldBeAValidDecimalNetmask(int field, int decimalValue) {
@@ -174,6 +174,11 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
+    /**
+     * Return whether a binary value is full of 0's, full of 1's or mixed with 0's and 1's
+     * @param binaryValue to be inspected.
+     * @return 0 if the binary is full of 0's (0 in decimal), 1 if the binary is full of 1's (255 in decimal), -1 otherwise (0<decimal<255)
+     */
     private int binaryContent(int[] binaryValue) {
         int content = binaryValue[0];
         for (int bit = 1; bit < binaryValue.length; ++bit) {
@@ -184,6 +189,12 @@ public class NetmaskV4 extends AddressV4 {
         return content;
     }
 
+    /**
+     * Check if the given binary value for a specific bytes would result in a valid netmask address.
+     * @param field provides the array position of new binary value.
+     * @param binaryValue is the new decimal value.
+     * @return true if the binary value is valid for a netmask address . False otherwise.
+     */
     private boolean wouldBeAValidBinaryNetmask(int field, int[] binaryValue) {
         switch (field) {
             case 0:
@@ -197,6 +208,12 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
+    /**
+     * Compute and set the binary value of the netmask from the prefix.
+     * Write 1's into the binary value as long as the prefix buffer is > 0
+     * The prefix buffer is equal to the prefix at the begining and is decremented for
+     * each 1 added in the binary value.
+     */
     private void setBinaryFromPrefix() {
         int buffer = prefix;
         int[] byteBuffer = new int[8];
@@ -215,6 +232,10 @@ public class NetmaskV4 extends AddressV4 {
         }
     }
 
+    /**
+     * Compute and set the netmask prefix from the binary value.
+     * Count the 1's from left to right in the binary value, stop if a zero is found (breakpoint)
+     */
     private void setPrefixFromBinary() {
         boolean breakpoint = false;
         int field = 3;
