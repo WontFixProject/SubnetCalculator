@@ -87,224 +87,224 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/addressV4_binary_field00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/netmaskV4"
@@ -371,224 +371,224 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <EditText
             android:id="@+id/netmaskV4_binary_field00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
     </LinearLayout>
     <EditText
         android:id="@+id/netmaskV4_prefix"
@@ -615,7 +615,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field2"
@@ -626,7 +625,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field1"
@@ -637,7 +635,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field0"
@@ -648,7 +645,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
     </LinearLayout>
     <LinearLayout
@@ -663,225 +659,193 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/first_addressV4_binary_field00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/last_addressV4"
@@ -899,7 +863,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field2"
@@ -910,7 +873,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field1"
@@ -921,7 +883,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field0"
@@ -932,7 +893,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            
             android:layout_weight="0.25"/>
     </LinearLayout>
     <LinearLayout
@@ -947,225 +907,193 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field35"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field07"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field06"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field05"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
         <TextView
             android:id="@+id/last_addressV4_binary_field00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-
-            android:layout_weight="0.1"/>
+            android:layout_weight="0.03125"/>
     </LinearLayout>
     <TextView
         android:id="@+id/range_address_quantity"

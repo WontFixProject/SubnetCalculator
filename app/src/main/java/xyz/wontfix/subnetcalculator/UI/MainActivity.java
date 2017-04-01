@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
     private TextView[][] firstAddressV4BinaryField;
     private TextView[] lastAddressV4DecimalField;
     private TextView[][] lastAddressV4BinaryField;
+    private TextView rangeAddressQuantity;
 
     public IPV4 ipv4;
     public RangeV4 rangev4;
@@ -247,6 +248,8 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         lastAddressV4BinaryField[3][6] = (TextView) findViewById(R.id.last_addressV4_binary_field36);
         lastAddressV4BinaryField[3][7] = (TextView) findViewById(R.id.last_addressV4_binary_field37);
 
+        rangeAddressQuantity = (TextView) findViewById(R.id.range_address_quantity);
+
         /*
          * Set event listeners for UI element
          */
@@ -281,6 +284,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
     // =====================================[ PRIVATE METHODS ] ================================= //
     //############################################################################################//
 
+    /**
+     * Update range values and display.
+     */
     private void updateRange() {
         rangev4.setRangeFromIPV4(ipv4);
         for (int field = 0; field < 4; ++field) {
@@ -291,6 +297,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                 lastAddressV4BinaryField[field][bit].setText(Integer.toString(rangev4.getLastAddress().getByte(field).getBinaryValue()[bit]));
             }
         }
+        rangeAddressQuantity.setText(Integer.toString(rangev4.getAddressQuantity()));
     }
 
     //############################################################################################//
