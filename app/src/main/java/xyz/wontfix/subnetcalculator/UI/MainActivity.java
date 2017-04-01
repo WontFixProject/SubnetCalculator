@@ -30,9 +30,9 @@ import xyz.wontfix.subnetcalculator.V4.upperLevel.RangeV4;
 public class MainActivity extends AppCompatActivity  implements EditText.OnFocusChangeListener{
 
 
-    //#############################################################################################
-    // =====================================[ PRIVATE FIELDS ]=================================== #
-    //#############################################################################################
+    //############################################################################################//
+    // =====================================[ PRIVATE FIELDS ]=================================== //
+    //############################################################################################//
 
     private EditText[] addressV4DecimalField;
     private EditText[][] addressV4BinaryField;
@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
     public RangeV4 rangev4;
 
 
-    //#############################################################################################
-    // ================================[ ACTIVITY STATE METHODS ]================================ #
-    //#############################################################################################
+    //############################################################################################//
+    // ================================[ ACTIVITY STATE METHODS ]================================ //
+    //############################################################################################//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -350,7 +350,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
             switch (type) {
                 //An address field has been changed
                 case 0:
-                    if (ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString()))) {
+                    if (!addressV4DecimalField[field].getText().toString().isEmpty() && ipv4.address.setByteByDecimal(field, Integer.valueOf(addressV4DecimalField[field].getText().toString()))) {
                         for (int bit = 0; bit < 8; ++bit) {
                             addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
                         }
@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                     break;
                 //An netmask field has been changed
                 case 1:
-                    if (ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()))) {
+                    if (!netmaskV4DecimalField[field].getText().toString().isEmpty() && ipv4.netmask.setByteByDecimal(field, Integer.valueOf(netmaskV4DecimalField[field].getText().toString()))) {
                         for (int bit = 0; bit < 8; ++bit) {
                             netmaskV4BinaryField[field][bit].setText(Integer.toString(ipv4.netmask.getByte(field).getBinaryValue()[bit]));
                         }
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                 //The netmask prefix has been changed
                 case 2:
                     try {
-                        if (ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
+                        if (!netmaskV4Prefix.getText().toString().isEmpty() && ipv4.netmask.setPrefix(Integer.valueOf(netmaskV4Prefix.getText().toString()))) {
                             for (int localField = 0; localField < 4; ++localField) {
                                 for (int bit = 0; bit < 8; ++bit) {
                                     netmaskV4BinaryField[localField][bit].setText(Integer.toString(ipv4.netmask.getByte(localField).getBinaryValue()[bit]));
