@@ -31,7 +31,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
         android:layout_below="@+id/main_title">
         <EditText
             android:id="@+id/addressV4_decimal_field3"
-            android:text="0"
+            android:text="@string/address_field_3_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -42,7 +42,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/addressV4_decimal_field2"
-            android:text="0"
+            android:text="@string/address_field_2_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -53,7 +53,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/addressV4_decimal_field1"
-            android:text="0"
+            android:text="@string/address_field_1_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -64,7 +64,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/addressV4_decimal_field0"
-            android:text="0"
+            android:text="@string/address_field_0_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -315,7 +315,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
         android:layout_below="@+id/addressV4Binary">
         <EditText
             android:id="@+id/netmaskV4_decimal_field3"
-            android:text="0"
+            android:text="@string/netmask_field_3_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -326,7 +326,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/netmaskV4_decimal_field2"
-            android:text="0"
+            android:text="@string/netmask_field_2_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -337,7 +337,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/netmaskV4_decimal_field1"
-            android:text="0"
+            android:text="@string/netmask_field_1_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -348,7 +348,7 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <EditText
             android:id="@+id/netmaskV4_decimal_field0"
-            android:text="0"
+            android:text="@string/netmask_field_0_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -592,7 +592,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
     </LinearLayout>
     <EditText
         android:id="@+id/netmaskV4_prefix"
-        android:text="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -608,7 +607,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
         android:layout_below="@+id/netmaskV4_prefix">
         <TextView
             android:id="@+id/first_addressV4_decimal_field3"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -618,7 +616,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field2"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -628,7 +625,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field1"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -638,7 +634,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/first_addressV4_decimal_field0"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -856,7 +851,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
         android:layout_below="@+id/first_addressV4Binary">
         <TextView
             android:id="@+id/last_addressV4_decimal_field3"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -866,7 +860,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field2"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -876,7 +869,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field1"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -886,7 +878,6 @@ tools:context="xyz.wontfix.subnetcalculator.UI.MainActivity">
             android:layout_weight="0.25"/>
         <TextView
             android:id="@+id/last_addressV4_decimal_field0"
-            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"

@@ -2,4 +2,12 @@
     <string name="app_name">SubnetCalculator</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="main_title">Subnet Calculator</string>
+    <string name="address_field_0_default">100</string>
+    <string name="address_field_1_default">1</string>
+    <string name="address_field_2_default">168</string>
+    <string name="address_field_3_default">192</string>
+    <string name="netmask_field_0_default">0</string>
+    <string name="netmask_field_1_default">0</string>
+    <string name="netmask_field_2_default">0</string>
+    <string name="netmask_field_3_default">255</string>
 </resources>
