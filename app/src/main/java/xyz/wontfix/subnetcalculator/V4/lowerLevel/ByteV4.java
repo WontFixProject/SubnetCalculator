@@ -36,14 +36,14 @@ public class ByteV4 {
     //#############################################################################################
 
     //Constructor (no value, defaulting to zero)
-    public ByteV4 () {
+    ByteV4 () {
         decimalValue = 0;
         this.binaryValue = new int[8];
         setBinaryFromDecimal();
     }
 
     //Constructor (from decimal value)
-    public ByteV4 (int decimalValue) {
+    ByteV4 (int decimalValue) {
         this.decimalValue = decimalValue;
         this.binaryValue = new int[8];
         setBinaryFromDecimal();
