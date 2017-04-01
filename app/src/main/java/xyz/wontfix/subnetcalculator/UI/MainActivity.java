@@ -15,6 +15,7 @@
 
 package xyz.wontfix.subnetcalculator.UI;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -300,6 +301,31 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
         rangeAddressQuantity.setText(Integer.toString(rangev4.getAddressQuantity()));
     }
 
+    /**
+     * Colorize all binary values to highlight the netmask effect.
+     */
+    private void colorizeBinaries() {
+        int firstColorCount = ipv4.netmask.getPrefix();
+
+        for (int field = 3; field >= 0; --field) {
+            for (int bit = 7; bit >= 0; --bit) {
+                if (firstColorCount > 0) {
+                    --firstColorCount;
+                    addressV4BinaryField[field][bit].setTextColor(Color.RED);
+                    netmaskV4BinaryField[field][bit].setTextColor(Color.RED);
+                    firstAddressV4BinaryField[field][bit].setTextColor(Color.RED);
+                    lastAddressV4BinaryField[field][bit].setTextColor(Color.RED);
+                }
+                else {
+                    addressV4BinaryField[field][bit].setTextColor(Color.BLUE);
+                    netmaskV4BinaryField[field][bit].setTextColor(Color.BLUE);
+                    firstAddressV4BinaryField[field][bit].setTextColor(Color.BLUE);
+                    lastAddressV4BinaryField[field][bit].setTextColor(Color.BLUE);
+                }
+            }
+        }
+    }
+
     //############################################################################################//
     // ======================================[ UI LISTENERS ] =================================== //
     //############################################################################################//
@@ -329,6 +355,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                             addressV4BinaryField[field][bit].setText(Integer.toString(ipv4.address.getByte(field).getBinaryValue()[bit]));
                         }
                         updateRange();
+                        colorizeBinaries();
                     }
                     else {
                         addressV4DecimalField[field].setText(Integer.toString(ipv4.address.getByte(field).getDecimalValue()));
@@ -342,6 +369,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                         }
                         netmaskV4Prefix.setText(Integer.toString(ipv4.netmask.getPrefix()));
                         updateRange();
+                        colorizeBinaries();
                     }
                     else
                         netmaskV4DecimalField[field].setText(Integer.toString(ipv4.netmask.getByte(field).getDecimalValue()));
@@ -357,6 +385,7 @@ public class MainActivity extends AppCompatActivity  implements EditText.OnFocus
                                 netmaskV4DecimalField[localField].setText(Integer.toString(ipv4.netmask.getByte(localField).getDecimalValue()));
                             }
                             updateRange();
+                            colorizeBinaries();
 
                         }
                         else {
