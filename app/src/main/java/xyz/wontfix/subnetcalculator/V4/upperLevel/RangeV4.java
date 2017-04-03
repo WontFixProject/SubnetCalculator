@@ -151,7 +151,7 @@ public class RangeV4 {
     /**
      * Compute the quantity of addresses in this range (using a netmask prefix)
      * @param netmaskPrefix the netmask of an IPV4 in the range.
-     * @return the number of addresses in this range.
+     * @return the number of addresses in this range. -1 if the prefix is invalid.
      */
     private int computeAddressQuantity(int netmaskPrefix) {
         if (netmaskPrefix >=0 && netmaskPrefix <= 32) {
